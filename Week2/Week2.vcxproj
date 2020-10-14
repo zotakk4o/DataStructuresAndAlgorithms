@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{AFD6A4B8-258D-485D-A3CF-63FE07BB78BB}</ProjectGuid>
-    <RootNamespace>Week1</RootNamespace>
+    <ProjectGuid>{AC4D7206-EE16-4793-812C-0B978BBE6588}</ProjectGuid>
+    <RootNamespace>Week2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -87,6 +88,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -100,6 +102,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,6 +118,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir);</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,12 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DataStructure.h" />
-    <ClInclude Include="Stack.h" />
+    <ClCompile Include="include\DataStructure.cpp" />
+    <ClCompile Include="include\File.cpp" />
+    <ClCompile Include="include\Stack.cpp" />
+    <ClCompile Include="include\String.cpp" />
+    <ClCompile Include="include\Vector.cpp" />
+    <ClCompile Include="ParenthesesValidator\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DataStructure.cpp" />
-    <ClCompile Include="Stack.cpp" />
+    <ClInclude Include="include\DataStructure.h" />
+    <ClInclude Include="include\File.h" />
+    <ClInclude Include="include\Stack.h" />
+    <ClInclude Include="include\String.h" />
+    <ClInclude Include="include\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ParenthesesValidator\test-data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
