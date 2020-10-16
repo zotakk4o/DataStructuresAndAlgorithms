@@ -6,12 +6,10 @@ class Flavoured
 {
 	protected:
 		String flavour;
-		Flavoured(const String&);
-		Flavoured(const Flavoured&) = delete;
-		Flavoured& operator=(const Flavoured&) = delete;
 
 	public:
-		virtual ~Flavoured();
+		Flavoured(const String&);
+		virtual ~Flavoured() = 0;
 		void setFlavour(const String&);
 		String getFlavour() const;
 };

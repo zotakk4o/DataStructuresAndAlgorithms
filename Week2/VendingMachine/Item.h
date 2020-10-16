@@ -4,12 +4,10 @@
 class Item {
 	protected:
 		double price;
-		Item(const double&);
-		Item(const Item&) = delete;
-		Item& operator=(const Item&) = delete;
 
 	public:
-		virtual ~Item();
+		Item(const double&);
+		virtual ~Item() = 0;
 		void setPrice(const double&);
 		double getPrice() const;
 };
