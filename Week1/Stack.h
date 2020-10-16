@@ -8,7 +8,7 @@ class Stack : private DataStructure<T>
 	public:
 		void push(const T&);
 		T pop();
-		T peek();
+		T peek() const;
 		bool isEmpty() const;
 };
 

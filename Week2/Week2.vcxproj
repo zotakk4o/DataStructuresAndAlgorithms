@@ -127,19 +127,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArithmeticExpressionParser\Main.cpp" />
+    <ClCompile Include="VendingMachine\BakeRolls.cpp" />
+    <ClCompile Include="VendingMachine\Cola.cpp" />
+    <ClCompile Include="VendingMachine\Croissant.cpp" />
+    <ClCompile Include="VendingMachine\Flavoured.cpp" />
     <ClCompile Include="include\DataStructure.cpp" />
     <ClCompile Include="include\File.cpp" />
     <ClCompile Include="include\Stack.cpp" />
     <ClCompile Include="include\String.cpp" />
     <ClCompile Include="include\Vector.cpp" />
+    <ClCompile Include="VendingMachine\Item.cpp" />
     <ClCompile Include="ParenthesesValidator\Main.cpp" />
+    <ClCompile Include="VendingMachine\VendingMachine.cpp" />
+    <ClCompile Include="VendingMachine\Main.cpp" />
+    <ClCompile Include="VendingMachine\Water.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="VendingMachine\BakeRolls.h" />
+    <ClInclude Include="VendingMachine\Cola.h" />
+    <ClInclude Include="VendingMachine\Croissant.h" />
+    <ClInclude Include="VendingMachine\Flavoured.h" />
     <ClInclude Include="include\DataStructure.h" />
     <ClInclude Include="include\File.h" />
     <ClInclude Include="include\Stack.h" />
     <ClInclude Include="include\String.h" />
     <ClInclude Include="include\Vector.h" />
+    <ClInclude Include="VendingMachine\Item.h" />
+    <ClInclude Include="VendingMachine\VendingMachine.h" />
+    <ClInclude Include="VendingMachine\Water.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ParenthesesValidator\test-data.txt" />

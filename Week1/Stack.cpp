@@ -16,7 +16,7 @@ T Stack<T>::pop() {
 }
 
 template<typename T>
-T Stack<T>::peek() {
+T Stack<T>::peek() const {
 	assert(this->size != 0);
 
 	return this->data[this->size - 1];
