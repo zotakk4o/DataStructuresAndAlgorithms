@@ -1,3 +1,6 @@
+#ifndef STACK_CPP
+#define STACK_CPP
+
 #include "Stack.h"
 
 template<typename T>
@@ -26,3 +29,5 @@ template<typename T>
 bool Stack<T>::isEmpty() const {
 	return this->size == 0;
 }
+
+#endif

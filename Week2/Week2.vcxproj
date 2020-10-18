@@ -128,6 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArithmeticExpressionParser\Main.cpp" />
+    <ClCompile Include="EqualExpressionsCheck\Main.cpp" />
+    <ClCompile Include="include\MathHelper.cpp" />
+    <ClCompile Include="ShuffledMathExpressions\Main.cpp" />
+    <ClCompile Include="TextEditor\Main.cpp" />
+    <ClCompile Include="TextEditor\TextEditor.cpp" />
     <ClCompile Include="VendingMachine\BakeRolls.cpp" />
     <ClCompile Include="VendingMachine\Cola.cpp" />
     <ClCompile Include="VendingMachine\Croissant.cpp" />
@@ -144,6 +149,8 @@
     <ClCompile Include="VendingMachine\Water.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\MathHelper.h" />
+    <ClInclude Include="TextEditor\TextEditor.h" />
     <ClInclude Include="VendingMachine\BakeRolls.h" />
     <ClInclude Include="VendingMachine\Cola.h" />
     <ClInclude Include="VendingMachine\Croissant.h" />

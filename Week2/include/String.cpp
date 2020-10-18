@@ -518,7 +518,7 @@ double String::toDouble(const String& num) {
 	double exponent = String::toLong(num.substring(0, dotIndex));
 	double fraction = String::toLong(num.substring(dotIndex + 1, num.getLength() - dotIndex - 1));
 
-	while (fraction > 1) {
+	while (fraction >= 1) {
 		fraction /= 10;
 	}
 
