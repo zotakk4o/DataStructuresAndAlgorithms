@@ -131,7 +131,8 @@
     <ClCompile Include="DailyPlants\Main.cpp" />
     <ClCompile Include="EqualExpressionsCheck\Main.cpp" />
     <ClCompile Include="include\MathHelper.cpp" />
-    <ClCompile Include="Queue\Queue.cpp" />
+    <ClCompile Include="Queue\LQueue.cpp" />
+    <ClCompile Include="Queue\Main.cpp" />
     <ClCompile Include="ShuffledMathExpressions\Main.cpp" />
     <ClCompile Include="StackMax\Main.cpp" />
     <ClCompile Include="StackMax\StackMax.cpp" />
@@ -154,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\MathHelper.h" />
-    <ClInclude Include="Queue\Queue.h" />
+    <ClInclude Include="Queue\LQueue.h" />
     <ClInclude Include="StackMax\StackMax.h" />
     <ClInclude Include="TextEditor\TextEditor.h" />
     <ClInclude Include="VendingMachine\BakeRolls.h" />
