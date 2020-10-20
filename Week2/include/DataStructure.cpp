@@ -1,6 +1,9 @@
+#ifndef DATASTRUCTURE_CPP
+#define DATASTRUCTURE_CPP
+
 #include "DataStructure.h"
 #include<assert.h>
-
+#include<iostream>
 template<typename T>
 DataStructure<T>::~DataStructure() {
 	this->deleteInternals();
@@ -65,3 +68,5 @@ template<typename T>
 bool DataStructure<T>::isFull() const {
 	return this->size == this->capacity;
 }
+
+#endif

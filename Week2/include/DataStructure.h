@@ -15,10 +15,11 @@ class DataStructure
 		void reserve();
 		bool isFull() const;
 
+	public:
 		DataStructure(const unsigned int& = INITIAL_CAPACITY);
 		DataStructure(const DataStructure&);
 		DataStructure& operator=(const DataStructure&);
-		~DataStructure();
+		virtual ~DataStructure() = 0;
 };
 
 #endif

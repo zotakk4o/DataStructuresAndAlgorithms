@@ -5,14 +5,11 @@
 template <typename T>
 class Stack : private DataStructure<T>
 {
-	private:
-		T maxElement;
 	public:
-		void push(const T&);
-		T pop();
-		T peek() const;
-		bool isEmpty() const;
-		T max() const;
+		virtual void push(const T&);
+		virtual T pop();
+		virtual T peek() const;
+		virtual bool isEmpty() const;
 };
 
 #endif

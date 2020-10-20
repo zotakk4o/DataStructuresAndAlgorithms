@@ -1,3 +1,6 @@
+#ifndef DATASTRUCTURE_CPP
+#define DATASTRUCTURE_CPP
+
 #include "DataStructure.h"
 #include<assert.h>
 
@@ -65,3 +68,5 @@ template<typename T>
 bool DataStructure<T>::isFull() const {
 	return this->size == this->capacity;
 }
+
+#endif
