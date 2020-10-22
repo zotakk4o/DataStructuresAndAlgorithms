@@ -59,7 +59,7 @@ LQueue<T>& LQueue<T>::operator=(const LQueue<T>& other) {
 		this->copy(other);
 	}
 
-	return &this;
+	return *this;
 }
 
 template<typename T>

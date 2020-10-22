@@ -134,6 +134,7 @@
     <ClCompile Include="include\Stack.cpp" />
     <ClCompile Include="include\String.cpp" />
     <ClCompile Include="include\Vector.cpp" />
+    <ClCompile Include="LabyrinthProblem\Main.cpp" />
     <ClCompile Include="PriorityQueue\Main.cpp" />
     <ClCompile Include="PriorityQueue\PriorityQueue.cpp" />
     <ClCompile Include="QueueSorting\Main.cpp" />
