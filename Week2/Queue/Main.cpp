@@ -8,10 +8,12 @@ int main() {
 	testQueue.enqueue(4);
 	testQueue.enqueue(5);
 	testQueue.enqueue(6);
+	LQueue<int> secondQueue = testQueue;
 	
 	while (!testQueue.isEmpty()) {
 		std::cout << testQueue.dequeue() << std::endl;
 	}
-	
+
+	std::cout << secondQueue.dequeue() << std::endl;
 	return 0;
 }
