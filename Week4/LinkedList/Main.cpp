@@ -12,6 +12,8 @@ int main() {
 	test.insertEnd(1);
 	test2.insertBeg(7);
 	test2.insertBeg(6);
+	test2.deleteAt(test2.end());
+    //test2.deleteAt(test2.end());
 	std::cout << test.getMidNode() << std::endl;
 	std::cout << test.getNth(3) << std::endl;
 	test.recursiveReverse();

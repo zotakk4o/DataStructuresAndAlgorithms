@@ -306,13 +306,14 @@ Node<T>* LinkedList<T>::findPrev(const LinkedListIterator<T>& it) {
 		++result;
 	}
 		
-	return result;
+	return result.ptr;
 }
 
 template<typename T>
-void LinkedList<T>::deleteAt(const LinkedListIterator<T>& it) {
+void LinkedList<T>::deleteAt(const LinkedListIterator<T>& elIterator) {
+	LinkedListIterator<T> it = elIterator;
 	if (!it) {
-		return;
+		it = LinkedListIterator<T>{this->tail};
 	}	
 
 	if (!this->empty() && it == this->begin()) {
@@ -332,6 +333,7 @@ void LinkedList<T>::deleteAt(const LinkedListIterator<T>& it) {
 		this->tail = prev;
 	}
 
+	this->listSize--;
 	delete it.ptr;
 }
 
