@@ -12,7 +12,7 @@ template<typename T>
 class LQueue
 {
 	private:
-		int queueSize;
+		unsigned int queueSize;
 		QueueNode<T>* front;
 		QueueNode<T>* rear;
 		void copy(const LQueue<T>&);
@@ -26,7 +26,7 @@ class LQueue
 		T dequeue();
 		T first() const;
 		bool isEmpty() const;
-		int size() const;
+		unsigned int size() const;
 };
 
 #endif

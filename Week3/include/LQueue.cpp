@@ -42,6 +42,9 @@ void LQueue<T>::deleteInternals() {
 	if (this->queueSize == 0) {
 		return;
 	}
+
+	this->queueSize = 0;
+
 	while (this->front != this->rear) {
 		QueueNode<T>* curr = this->front;
 		this->front = this->front->next;
@@ -111,7 +114,7 @@ bool LQueue<T>::isEmpty() const {
 }
 
 template<typename T>
-int LQueue<T>::size() const {
+unsigned int LQueue<T>::size() const {
 	return this->queueSize;
 }
 
