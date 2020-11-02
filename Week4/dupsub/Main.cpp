@@ -15,7 +15,54 @@
 
 template <typename T>
 bool dupsub(node<T>* l, unsigned k) {
+	if (!l || k <= 0) {
+		return false;
+	}
 
+	node<T>* first = l;
+	node<T>* currFirst = l;
+	node<T>* currSubFirst;
+	node<T>* lReset;
+	unsigned currK = 1;
+	while (currFirst) {
+		currSubFirst = currFirst;
+		int occurrencesFound = 0;
+		while (l) {
+			int numsMatched = 0;
+			lReset = l;
+			while (currK <= k) {
+				if (l && currSubFirst && currSubFirst->data == l->data) {
+					currSubFirst = currSubFirst->next;
+					numsMatched++;
+				}
+
+				if (!l) {
+					break;
+				}
+
+				l = l->next;
+				currK++;
+			}
+			l = lReset->next;
+
+			if (numsMatched == k) {
+				occurrencesFound++;
+				if (occurrencesFound == 2) {
+					return true;
+				}
+			}
+			else {
+				currSubFirst = currFirst;
+			}
+
+			currK = 1;
+		}
+
+		l = first;
+		currFirst = currFirst->next;
+	}
+
+	return false;
 }
 
 /***********************************************************************
@@ -28,7 +75,7 @@ bool dupsub(node<T>* l, unsigned k) {
 /***********************************************************************
   РАЗКОМЕНТИРАЙТЕ СЛЕДВАЩИЯ РЕД, ЗА ДА ВКЛЮЧИТЕ ТЕСТОВЕТЕ
 ************************************************************************/
-//#include "prob5_tests.h"
+#include "prob5_tests.h"
 
 int main ()
 {

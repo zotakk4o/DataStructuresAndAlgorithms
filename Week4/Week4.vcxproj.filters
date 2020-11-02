@@ -45,10 +45,10 @@
     <ClCompile Include="removedups\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dupsub\Main.cpp">
+    <ClCompile Include="removesub\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="removesub\Main.cpp">
+    <ClCompile Include="dupsub\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
