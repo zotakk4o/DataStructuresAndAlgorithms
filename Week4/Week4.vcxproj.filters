@@ -42,6 +42,15 @@
     <ClCompile Include="LinkedList\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="removedups\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dupsub\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removesub\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\DataStructure.h">
@@ -66,6 +75,42 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\LinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removedups\doctest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removedups\node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removedups\prob6_tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removedups\test_utils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dupsub\doctest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dupsub\node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dupsub\prob5_tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dupsub\test_utils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removesub\doctest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removesub\node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removesub\prob7_tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removesub\test_utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

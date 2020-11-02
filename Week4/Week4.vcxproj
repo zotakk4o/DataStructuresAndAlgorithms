@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dupsub\Main.cpp" />
     <ClCompile Include="include\DataStructure.cpp" />
     <ClCompile Include="include\File.cpp" />
     <ClCompile Include="include\LinkedList.cpp" />
@@ -136,8 +137,14 @@
     <ClCompile Include="include\String.cpp" />
     <ClCompile Include="include\Vector.cpp" />
     <ClCompile Include="LinkedList\Main.cpp" />
+    <ClCompile Include="removedups\Main.cpp" />
+    <ClCompile Include="removesub\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dupsub\doctest.h" />
+    <ClInclude Include="dupsub\node.h" />
+    <ClInclude Include="dupsub\prob5_tests.h" />
+    <ClInclude Include="dupsub\test_utils.hpp" />
     <ClInclude Include="include\DataStructure.h" />
     <ClInclude Include="include\File.h" />
     <ClInclude Include="include\LinkedList.h" />
@@ -146,6 +153,14 @@
     <ClInclude Include="include\Stack.h" />
     <ClInclude Include="include\String.h" />
     <ClInclude Include="include\Vector.h" />
+    <ClInclude Include="removedups\doctest.h" />
+    <ClInclude Include="removedups\node.h" />
+    <ClInclude Include="removedups\prob6_tests.h" />
+    <ClInclude Include="removedups\test_utils.hpp" />
+    <ClInclude Include="removesub\doctest.h" />
+    <ClInclude Include="removesub\node.h" />
+    <ClInclude Include="removesub\prob7_tests.h" />
+    <ClInclude Include="removesub\test_utils.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
