@@ -12,7 +12,7 @@ Iterator<T>::Iterator(Node<T>* _ptr, Node<T>* _end, bool _canIncrease, bool _can
 
 template<typename T>
 Iterator<T> Iterator<T>::next() const {
-	if (!this->canIncrease)
+	if (!this->canIncrease || !this->ptr)
 		return *this;
 
 	return this->ptr->next == this->end ? Iterator<T>(this->ptr->next, this->end, false) : Iterator<T>(this->ptr->next, this->end, true);
@@ -20,7 +20,7 @@ Iterator<T> Iterator<T>::next() const {
 
 template<typename T>
 Iterator<T> Iterator<T>::prev() const {
-	if (!this->canDecrease)
+	if (!this->canDecrease || !this->ptr)
 		return *this;
 
 	return this->ptr->prev == this->end ? Iterator<T>(this->ptr->prev, this->end, true, false) : Iterator<T>(this->ptr->prev, this->end, true, true);
@@ -67,7 +67,7 @@ T& Iterator<T>::operator*() {
 
 template<typename T>
 bool Iterator<T>::operator==(Iterator<T> const& it) const {
-	return this->ptr == it.ptr && it.canIncrease == this->canIncrease && it.canDecrease == this->canDecrease;
+	return (this->ptr == nullptr && it.ptr == nullptr) || (this->ptr == it.ptr && it.canIncrease == this->canIncrease && it.canDecrease == this->canDecrease);
 }
 
 template<typename T>
@@ -286,7 +286,34 @@ template<typename T>
 void DLList<T>::insert(size_t, const T&);
 
 template<typename T>
-void DLList<T>::erase(size_t);
+void DLList<T>::erase(size_t pos) {
+	assert(pos >= 0 && pos < this->dllistSize && !this->isEmpty());
+
+	if (this->dllistSize == 1) {
+		delete this->frontPtr;
+		this->frontPtr = nullptr;
+		this->backPtr = nullptr;
+		this->dllistSize--;
+		return;
+	}
+
+	Iterator<T> element = this->begin();
+	element += pos;
+	Node<T>* elPtr = element.ptr;
+	elPtr->prev->next = elPtr->next;
+	elPtr->next->prev = elPtr->prev;
+
+	if (pos == this->dllistSize - 1) {
+		this->backPtr = this->backPtr->prev;
+	}
+	else if (pos == 0) {
+		this->frontPtr = this->frontPtr->next;
+	}
+
+	this->dllistSize--;
+	delete elPtr;
+
+}
 
 template<typename T>
 void DLList<T>::clear() {
@@ -296,6 +323,23 @@ void DLList<T>::clear() {
 template<typename T>
 void DLList<T>::unique() {
 	assert(!this->isEmpty());
+	int currPos = 0;
+	for (T x : *this)
+	{
+		int yPos = currPos + 1;
+		Iterator<T> currBeg = this->begin();
+		currBeg += yPos;
+		for (Iterator<T> it = currBeg; it != this->end(); ++it)
+		{
+			if ((*it) == x) {
+				it--;
+				this->erase(yPos);
+				yPos--;
+			}
+			yPos++;
+		}
+		currPos++;
+	}
 }
 
 template<typename T>
@@ -318,10 +362,32 @@ DLList<T>& DLList<T>::reverse() {
 }
 
 template<typename T>
-void DLList<T>::removelf(bool (*pred)(const T& element));
+void DLList<T>::removelf(bool (*pred)(const T&)) {
+	int currPos = 0;
+	Node<T>* currHead = this->frontPtr;
+	while (currHead != this->backPtr) {
+		if (pred(currHead->data)) {
+			currHead = currHead->prev;
+			this->erase(currPos);
+			currPos--;
+		}
+
+		currHead = currHead->next;
+		currPos++;
+	}
+
+	if (pred(this->backPtr->data)) {
+		this->erase(this->dllistSize - 1);
+	}
+}
 
 template<typename T>
-void DLList<T>::map(T(*func) (const T&));
+void DLList<T>::map(T(*func) (const T&)) {
+	for (Iterator<T> it = this->begin(); it != this->end(); it++)
+	{
+		*it = func(*it);
+	}
+}
 
 template<typename T>
 Iterator<T> DLList<T>::begin() const {

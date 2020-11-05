@@ -44,6 +44,7 @@ template<typename T>
 class DLList
 {
 	private:
+		friend class Iterator<T>;
 		unsigned int dllistSize;
 		Node<T>* frontPtr;
 		Node<T>* backPtr;

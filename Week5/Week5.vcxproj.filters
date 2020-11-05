@@ -39,10 +39,10 @@
     <ClCompile Include="include\Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DLList\Main.cpp">
+    <ClCompile Include="include\DLList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\DLList.cpp">
+    <ClCompile Include="DLList\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
