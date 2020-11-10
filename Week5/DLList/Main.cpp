@@ -8,6 +8,8 @@ int main() {
 	test2.pushBack(2);
 	test2.pushBack(2);
 	test2.pushBack(3);
+	test2.insert(0, 6);
+	test2.insert(5, 7);
 	test = test2;
 
 	test.erase(0);

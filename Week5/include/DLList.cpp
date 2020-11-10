@@ -283,7 +283,24 @@ T DLList<T>::popBack() {
 }
 
 template<typename T>
-void DLList<T>::insert(size_t, const T&);
+void DLList<T>::insert(size_t pos, const T& element) {
+	assert(pos >= 0 && pos <= this->dllistSize);
+	if (pos == 0) {
+		this->pushFront(element);
+	}
+	else if (pos == this->dllistSize - 1) {
+		this->pushBack(element);
+	}
+	else {
+		Iterator<T> el = this->begin();
+		el += pos;
+		Node<T>* newEl = new Node<T>{ element };
+		newEl->prev = el.ptr;
+		newEl->next = el.ptr->next;
+		el.ptr->next->prev = newEl;
+		el.ptr->next = newEl;
+	}
+}
 
 template<typename T>
 void DLList<T>::erase(size_t pos) {
