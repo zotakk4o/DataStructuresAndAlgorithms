@@ -76,6 +76,34 @@ BST<K, V>& BST<K, V>::operator=(const BST<K, V>& other) {
 }
 
 template<typename K, typename V>
-void prittyPrint();
+void BST<K, V>::prittyPrint() {
+
+}
+
+template<typename K, typename V>
+void BST<K, V>::recurrsivePrint(const Node<K, V>*& root, int spaces) {
+
+}
+
+template<typename K, typename V>
+int BST<K, V>::calculateHeightRecurrsive(Node<K, V>* const& root, int currHeight) {
+	if (!root) {
+		return -1;
+	}
+
+	int currLeftHeight = this->calculateHeightRecurrsive(root->left, currHeight + 1);
+	int currRightHeight = this->calculateHeightRecurrsive(root->right, currHeight + 1);
+
+	if (currLeftHeight == currRightHeight && currLeftHeight == -1) {
+		return currHeight;
+	}
+
+	return currLeftHeight > currRightHeight ? currLeftHeight : currRightHeight;
+}
+
+template<typename K, typename V>
+int BST<K, V>::calculateHeight() {
+	return this->calculateHeightRecurrsive(this->root);
+}
 
 #endif

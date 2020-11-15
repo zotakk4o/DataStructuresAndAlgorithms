@@ -23,6 +23,8 @@ class BST
 		void deleteTree(Node<K, V>*);
 		Node<K, V>* copyTree(const Node<K, V>*&);
 		Node<K, V>* createTree(const Vector<std::pair<K, V>>&);
+		void recurrsivePrint(const Node<K, V>*&, int);
+		int calculateHeightRecurrsive(Node<K, V>* const&, int = 0);
 	public:
 		BST(const Vector<std::pair<K, V>>&);
 		BST(const BST<K, V>&);
@@ -30,6 +32,7 @@ class BST
 		BST& operator=(const BST<K, V>&);
 		
 		void prittyPrint();
+		int calculateHeight();
 };
 
 #endif
