@@ -3,7 +3,6 @@
 
 #include "BST.h"
 
-
 template<typename K, typename V>
 Node<K, V>::Node(const K& _key, const V& _value) : key(_key), value(_value), left(nullptr), right(nullptr) {};
 
@@ -34,18 +33,26 @@ Node<K,V>* BST<K, V>::copyTree(const Node<K,V>*& root) {
 }
 
 template<typename K, typename V>
-Node<K, V>* createTree(const Vector<V>& values) {
-	Node<K, V>* currRoot = new Node<K, V>{};
-}
-
-template<typename K, typename V>
 BST<K, V>::BST(const Vector<std::pair<K, V>>& pairs) {
 	this->root = this->createTree(pairs);
 }
 
 template<typename K, typename V>
 Node<K, V>* BST<K, V>::createTree(const Vector<std::pair<K, V>>& pairs) {
-	//TODO
+	if (!pairs.getSize()) {
+		return nullptr;
+	}
+
+	int pairsSize = pairs.getSize();
+	int currIndex = pairsSize % 2 == 0 ? pairsSize / 2 - 1 : pairsSize / 2 ;
+
+	std::pair<K, V> current = pairs[currIndex];
+	Node<K, V>* newNode = new Node<K, V>{current.first, current.second};
+
+	newNode->left = this->createTree(pairs.slice(0, currIndex - 1));
+	newNode->right = this->createTree(pairs.slice(currIndex + 1, pairsSize - 1));
+
+	return newNode;
 }
 
 template<typename K, typename V>
