@@ -2,6 +2,7 @@
 #define BST_CPP
 
 #include "BST.h"
+#include <fstream>
 
 template<typename K, typename V>
 Node<K, V>::Node(const K& _key, const V& _value) : key(_key), value(_value), left(nullptr), right(nullptr) {};
@@ -77,12 +78,25 @@ BST<K, V>& BST<K, V>::operator=(const BST<K, V>& other) {
 
 template<typename K, typename V>
 void BST<K, V>::prittyPrint() {
-
+	this->recurrsivePrint(this->root);
 }
 
 template<typename K, typename V>
-void BST<K, V>::recurrsivePrint(const Node<K, V>*& root, int spaces) {
+void BST<K, V>::recurrsivePrint(Node<K, V>* const& root, int spaces) {
+	if (!root) {
+		return;
+	}
+		
+	spaces += 5;
+	recurrsivePrint(root->right, spaces);
 
+	std::cout << std::endl;
+	for (int i = 5; i < spaces; i++) {
+		std::cout << " ";
+	}	
+	std::cout << root->value << "\n";
+
+	recurrsivePrint(root->left, spaces);
 }
 
 template<typename K, typename V>
@@ -104,6 +118,147 @@ int BST<K, V>::calculateHeightRecurrsive(Node<K, V>* const& root, int currHeight
 template<typename K, typename V>
 int BST<K, V>::calculateHeight() {
 	return this->calculateHeightRecurrsive(this->root);
+}
+
+template<typename K, typename V>
+bool BST<K, V>::contains(const K& key) {
+	if (!this->root) {
+		return false;
+	}
+
+	bool res = false;
+	Node<K, V>* currRoot = this->root;
+
+	if (key > this->root->key) {
+		this->root = this->root->right;
+	} else if (key < this->root->key) {
+		this->root = this->root->left;
+	}
+	else {
+		res = true;
+		this->root = currRoot;
+		return res;
+	}
+	
+	res = this->contains(key);
+	this->root = currRoot;
+	return res;
+}
+
+template<typename K, typename V>
+int BST<K, V>::sumLeaves() {
+	if (!this->root) {
+		return 0;
+	}
+	Node<K, V>* currRoot = this->root;
+
+	if (!this->root->left && !this->root->right) {
+		return this->root->key;
+	}
+
+	int sumLeaves = 0;
+	if (this->root->left) {
+		this->root = this->root->left;
+		sumLeaves += this->sumLeaves();
+		this->root = currRoot;
+	}
+
+	if (this->root->right) {
+		this->root = this->root->right;
+		sumLeaves += this->sumLeaves();
+		this->root = currRoot;
+	}
+
+	return sumLeaves;
+}
+
+template<typename K, typename V>
+int BST<K, V>::countLeaves() {
+	if (!this->root) {
+		return 0;
+	}
+	Node<K, V>* currRoot = this->root;
+
+	if (!this->root->left && !this->root->right) {
+		return 1;
+	}
+
+	int countLeaves = 0;
+	if (this->root->left) {
+		this->root = this->root->left;
+		countLeaves += this->countLeaves();
+		this->root = currRoot;
+	}
+
+	if (this->root->right) {
+		this->root = this->root->right;
+		countLeaves += this->countLeaves();
+		this->root = currRoot;
+	}
+
+	return countLeaves;
+}
+
+template<typename K, typename V>
+bool BST<K, V>::remove(const K& key) {
+	if (!this->contains(key)) {
+		return false;
+	}
+
+	this->root = this->removeRecurrsive(this->root, key);
+
+	return true;
+}
+
+template<typename K, typename V>
+Node<K, V>* BST<K, V>::removeRecurrsive(Node<K, V>*& root, const K& key) {
+	if (!root) {
+		return nullptr;
+	}
+
+	if (key > root->key) {
+		root->right = this->removeRecurrsive(root->right, key);
+	}
+	else if (key < root->key) {
+		root->left = this->removeRecurrsive(root->left, key);
+	}
+	else {
+		if (!root->left) {
+			Node<K, V>* temp = root->right;
+			delete root;
+			return temp;
+		}
+		else if (!root->right) {
+			Node<K, V>* temp = root->left;
+			delete root;
+			return temp;
+		}
+
+		Node<K, V>* temp = root->left;
+
+		root->key = temp->key;
+		root->value = temp->value;
+		root->left = this->removeRecurrsive(root->left, temp->key);
+	}
+
+	return root;
+}
+
+template<typename K, typename V>
+void BST<K, V>::serializeTree(std::ofstream& out) {
+	if (!this->root) {
+		out << "()";
+		return;
+	}
+
+	out << "(" << this->root->key << ":" << this->root->value << " ";
+	Node<K, V>* currRoot = this->root;
+	this->root = currRoot->left;
+	this->serializeTree(out);
+	this->root = currRoot->right;
+	this->serializeTree(out);
+	this->root = currRoot;
+	out << ")";
 }
 
 #endif
