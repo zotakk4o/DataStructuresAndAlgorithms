@@ -3,9 +3,13 @@
 
 #include "BST.h"
 #include <fstream>
+#include <iostream>
 
 template<typename K, typename V>
 Node<K, V>::Node(const K& _key, const V& _value) : key(_key), value(_value), left(nullptr), right(nullptr) {};
+
+template<typename K, typename V>
+BST<K, V>::BST() : root(nullptr) {}
 
 template<typename K, typename V>
 void BST<K, V>::deleteTree(Node<K, V>* root) {
@@ -79,6 +83,33 @@ BST<K, V>& BST<K, V>::operator=(const BST<K, V>& other) {
 template<typename K, typename V>
 void BST<K, V>::prittyPrint() {
 	this->recurrsivePrint(this->root);
+}
+
+template<typename K, typename V>
+Node<K, V>* BST<K, V>::recurrsiveInsert(Node<K, V>* root, const K& key, const V& value) {
+	if (!root) {
+		return new Node<K, V>{ key, value };
+	}
+
+	if (key > root->key) {
+		root->right = this->recurrsiveInsert(root->right, key, value);
+	}
+	else if (key < root->key) {
+		root->left = this->recurrsiveInsert(root->left, key, value);
+	}
+
+	return root;
+}
+
+template<typename K, typename V>
+void BST<K, V>::insert(const K& key, const V& value) {
+	if (!this->root) {
+		this->root = this->recurrsiveInsert(this->root, key, value);
+	}
+	else {
+		this->recurrsiveInsert(this->root, key, value);
+	}
+	
 }
 
 template<typename K, typename V>

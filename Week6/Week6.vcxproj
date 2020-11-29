@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BST.h" />
+    <ClInclude Include="include\BinaryTree.h" />
     <ClInclude Include="include\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
