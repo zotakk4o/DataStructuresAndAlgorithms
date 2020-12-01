@@ -265,7 +265,7 @@ Node<K, V>* BST<K, V>::removeRecurrsive(Node<K, V>*& root, const K& key) {
 			return temp;
 		}
 
-		Node<K, V>* temp = root->left;
+		Node<K, V>* temp = this->largestLeftNode(root);
 
 		root->key = temp->key;
 		root->value = temp->value;
@@ -273,6 +273,15 @@ Node<K, V>* BST<K, V>::removeRecurrsive(Node<K, V>*& root, const K& key) {
 	}
 
 	return root;
+}
+
+template<typename K, typename V>
+Node<K, V>* BST<K, V>::largestLeftNode(Node<K, V>* const& root) {
+	if (root->left && !root->left->left) {
+		return root->right;
+	}
+
+	return this->largestLeftNode(root->left);
 }
 
 template<typename K, typename V>

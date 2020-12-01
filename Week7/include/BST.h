@@ -23,12 +23,13 @@ class BST : public BinaryTree<K, V>
 	private:
 		Node<K, V>* root;
 		void deleteTree(Node<K, V>*);
-		Node<K, V>* copyTree(const Node<K, V>* const&);
+		Node<K, V>* copyTree(const Node<K, V>*&);
 		Node<K, V>* createTree(const Vector<std::pair<K, V>>&);
 		void recurrsivePrint(Node<K, V>* const&, int = 0);
 		Node<K, V>* recurrsiveInsert(Node<K, V>*, const K&, const V&);
 		int calculateHeightRecurrsive(Node<K, V>* const&, int = 0);
 		Node<K, V>* removeRecurrsive(Node<K, V>*&, const K&);
+		Node<K, V>* largestLeftNode(Node<K, V>* const&);
 	public:
 		BST();
 		BST(const Vector<std::pair<K, V>>&);
@@ -44,7 +45,6 @@ class BST : public BinaryTree<K, V>
 		int countLeaves();
 		bool remove(const K&);
 		void serializeTree(std::ofstream&);
-		bool isOrdered();
 };
 
 #endif

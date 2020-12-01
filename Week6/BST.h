@@ -29,6 +29,7 @@ class BST : public BinaryTree<K, V>
 		Node<K, V>* recurrsiveInsert(Node<K, V>*, const K&, const V&);
 		int calculateHeightRecurrsive(Node<K, V>* const&, int = 0);
 		Node<K, V>* removeRecurrsive(Node<K, V>*&, const K&);
+		Node<K, V>* largestLeftNode(Node<K, V>* const&);
 	public:
 		BST();
 		BST(const Vector<std::pair<K, V>>&);

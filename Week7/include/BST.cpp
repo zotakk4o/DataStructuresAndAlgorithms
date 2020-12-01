@@ -4,7 +4,6 @@
 #include "BST.h"
 #include <fstream>
 #include <iostream>
-#include <cmath>
 
 template<typename K, typename V>
 Node<K, V>::Node(const K& _key, const V& _value) : key(_key), value(_value), left(nullptr), right(nullptr) {};
@@ -25,7 +24,7 @@ void BST<K, V>::deleteTree(Node<K, V>* root) {
 }
 
 template<typename K, typename V>
-Node<K,V>* BST<K, V>::copyTree(const Node<K,V>* const& root) {
+Node<K,V>* BST<K, V>::copyTree(const Node<K,V>*& root) {
 	if (!root) {
 		return nullptr;
 	}
@@ -266,7 +265,7 @@ Node<K, V>* BST<K, V>::removeRecurrsive(Node<K, V>*& root, const K& key) {
 			return temp;
 		}
 
-		Node<K, V>* temp = root->left;
+		Node<K, V>* temp = this->largestLeftNode(root);
 
 		root->key = temp->key;
 		root->value = temp->value;
@@ -274,6 +273,15 @@ Node<K, V>* BST<K, V>::removeRecurrsive(Node<K, V>*& root, const K& key) {
 	}
 
 	return root;
+}
+
+template<typename K, typename V>
+Node<K, V>* BST<K, V>::largestLeftNode(Node<K, V>* const& root) {
+	if (root->left && !root->left->left) {
+		return root->right;
+	}
+
+	return this->largestLeftNode(root->left);
 }
 
 template<typename K, typename V>
@@ -291,29 +299,6 @@ void BST<K, V>::serializeTree(std::ofstream& out) {
 	this->serializeTree(out);
 	this->root = currRoot;
 	out << ")";
-}
-
-template<typename K, typename V>
-bool BST<K, V>::isOrdered() {
-	if (!this->root || (!this->root->left && !this->root->right)) {
-		return true;
-	}
-
-	Node<K, V>* currRoot = this->root;
-	bool res = true;
-
-	this->root = this->root->left;
-	res = this->isOrdered();
-	this->root = currRoot;
-
-	if (this->root->left->key > this->root->key || this->root->key > this->root->right->key) {
-		return false;
-	}
-
-	this->root = this->root->right;
-	res = this->isOrdered();
-	this->root = currRoot;
-	return res;
 }
 
 #endif
