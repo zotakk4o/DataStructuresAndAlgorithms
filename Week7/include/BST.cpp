@@ -14,18 +14,18 @@ template<typename K, typename V>
 BSTPosition<K, V>::BSTPosition(Node<K, V>*& _ptr) : ptr(_ptr) {}
 
 template<typename K, typename V>
-BSTPosition<K, V>& BSTPosition<K, V>::left() {
+BSTPosition<K, V> BSTPosition<K, V>::left() {
 	if (this->ptr) {
-		this->ptr = this->ptr->left;
+		BSTPosition<K, V>{this->ptr->left};
 	}
 
 	return *this;
 }
 
 template<typename K, typename V>
-BSTPosition<K, V>& BSTPosition<K, V>::right() {
+BSTPosition<K, V> BSTPosition<K, V>::right() {
 	if (this->ptr) {
-		this->ptr = this->ptr->left;
+		BSTPosition<K, V>{this->ptr->left};
 	}
 
 	return *this;

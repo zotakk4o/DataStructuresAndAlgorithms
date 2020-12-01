@@ -28,8 +28,8 @@ class BSTPosition {
 		Node<K, V>* ptr;
 	public:
 		BSTPosition(Node<K, V>*& = nullptr);
-		BSTPosition<K, V>& left();
-		BSTPosition<K, V>& right();
+		BSTPosition<K, V> left();
+		BSTPosition<K, V> right();
 		K getKey();
 		V getValue();
 		bool setKey(const K&);
