@@ -4,9 +4,71 @@
 #include "BST.h"
 #include <fstream>
 #include <iostream>
+#include <algorithm>
+#include <cmath>
 
 template<typename K, typename V>
-Node<K, V>::Node(const K& _key, const V& _value) : key(_key), value(_value), left(nullptr), right(nullptr) {};
+Node<K, V>::Node(const K& _key, const V& _value, const unsigned int& _height) : key(_key), value(_value), height(_height), left(nullptr), right(nullptr) {};
+
+template<typename K, typename V>
+BSTPosition<K, V>::BSTPosition(Node<K, V>*& _ptr) : ptr(_ptr) {}
+
+template<typename K, typename V>
+BSTPosition<K, V>& BSTPosition<K, V>::left() {
+	if (this->ptr) {
+		this->ptr = this->ptr->left;
+	}
+
+	return *this;
+}
+
+template<typename K, typename V>
+BSTPosition<K, V>& BSTPosition<K, V>::right() {
+	if (this->ptr) {
+		this->ptr = this->ptr->left;
+	}
+
+	return *this;
+}
+
+template<typename K, typename V>
+BSTPosition<K, V>::operator bool() const {
+	return this->ptr;
+}
+
+template<typename K, typename V>
+K BSTPosition<K, V>::getKey() {
+	if (!this->ptr) {
+		throw "Cannot get key of nullptr";
+	}
+	return this->ptr->key;
+}
+
+template<typename K, typename V>
+V BSTPosition<K, V>::getValue() {
+	if (!this->ptr) {
+		throw "Cannot get key of nullptr";
+	}
+	return this->ptr->value;
+}
+
+template<typename K, typename V>
+bool BSTPosition<K, V>::setKey(const K& key) {
+	if (!this->ptr) {
+		return false;
+	}
+	this->ptr->key = key;
+	return true;
+}
+
+template<typename K, typename V>
+bool BSTPosition<K, V>::setValue(const V& value) {
+	if (!this->ptr) {
+		return false;
+	}
+	this->ptr->value = value;
+	return true;
+}
 
 template<typename K, typename V>
 BST<K, V>::BST() : root(nullptr) {}
@@ -24,12 +86,12 @@ void BST<K, V>::deleteTree(Node<K, V>* root) {
 }
 
 template<typename K, typename V>
-Node<K,V>* BST<K, V>::copyTree(const Node<K,V>*& root) {
+Node<K,V>* BST<K, V>::copyTree(const Node<K,V>* const& root) {
 	if (!root) {
 		return nullptr;
 	}
 
-	Node<K, V>* newNode = new Node<K, V>{ root->key, root->value };
+	Node<K, V>* newNode = new Node<K, V>{ root->key, root->value, root->height };
 
 	newNode->left = this->copyTree(root->left);
 	newNode->right = this->copyTree(root->right);
@@ -53,9 +115,11 @@ Node<K, V>* BST<K, V>::createTree(const Vector<std::pair<K, V>>& pairs) {
 
 	std::pair<K, V> current = pairs[currIndex];
 	Node<K, V>* newNode = new Node<K, V>{current.first, current.second};
-
+	
 	newNode->left = this->createTree(pairs.slice(0, currIndex - 1));
 	newNode->right = this->createTree(pairs.slice(currIndex + 1, pairsSize - 1));
+
+	newNode->height = this->updateHeight(newNode);
 
 	return newNode;
 }
@@ -97,6 +161,8 @@ Node<K, V>* BST<K, V>::recurrsiveInsert(Node<K, V>* root, const K& key, const V&
 	else if (key < root->key) {
 		root->left = this->recurrsiveInsert(root->left, key, value);
 	}
+	
+	root->height = this->updateHeight(root);
 
 	return root;
 }
@@ -125,7 +191,7 @@ void BST<K, V>::recurrsivePrint(Node<K, V>* const& root, int spaces) {
 	for (int i = 5; i < spaces; i++) {
 		std::cout << " ";
 	}	
-	std::cout << root->value << "\n";
+	std::cout << root->key << "-" <<  root->value << "\n";
 
 	recurrsivePrint(root->left, spaces);
 }
@@ -148,7 +214,11 @@ int BST<K, V>::calculateHeightRecurrsive(Node<K, V>* const& root, int currHeight
 
 template<typename K, typename V>
 int BST<K, V>::calculateHeight() {
-	return this->calculateHeightRecurrsive(this->root);
+	if (!root) {
+		return -1;
+	}
+
+	return this->root->height;
 }
 
 template<typename K, typename V>
@@ -272,6 +342,8 @@ Node<K, V>* BST<K, V>::removeRecurrsive(Node<K, V>*& root, const K& key) {
 		root->left = this->removeRecurrsive(root->left, temp->key);
 	}
 
+	root->height = this->updateHeight(root);
+
 	return root;
 }
 
@@ -299,6 +371,124 @@ void BST<K, V>::serializeTree(std::ofstream& out) {
 	this->serializeTree(out);
 	this->root = currRoot;
 	out << ")";
+}
+
+template<typename K, typename V>
+bool BST<K, V>::isOrdered() {
+	if (!this->root || (!this->root->left && !this->root->right)) {
+		return true;
+	}
+
+	Node<K, V>* currRoot = this->root;
+	bool res = true;
+
+	this->root = this->root->left;
+	res = this->isOrdered();
+	this->root = currRoot;
+
+	if (!res || this->root->left->key > this->root->key || this->root->key > this->root->right->key) {
+		return false;
+	}
+
+	this->root = this->root->right;
+	res = this->isOrdered();
+	this->root = currRoot;
+	return res;
+}
+
+template<typename K, typename V>
+bool BST<K, V>::isBalanced() {
+	return this->isBalancedRecurrsive(this->root);
+}
+
+template<typename K, typename V>
+bool BST<K, V>::isBalancedRecurrsive(Node<K, V>* const& root) {
+	if (!root) {
+		return true;
+	}
+
+	unsigned int leftHeight = this->root->left ? this->root->left->height + 1 : 0;
+	unsigned int rightHeight = this->root->right ? this->root->right->height + 1 : 0;
+
+	if (std::labs(leftHeight - rightHeight) <= 1 && this->isBalancedRecurrsive(root->left) && isBalancedRecurrsive(root->right)) {
+		return true;
+	}
+	
+	return false;
+}
+
+template<typename K, typename V>
+void BST<K, V>::mirrorTree() {
+	this->mirrorTreeRecurrsive(this->root);
+}
+
+template<typename K, typename V>
+void BST<K, V>::childrenify() {
+	this->childrenifyRecurrsive(this->root);
+}
+
+template<typename K, typename V>
+void BST<K, V>::mirrorTreeRecurrsive(Node<K, V>*& root) {
+	if (!root) {
+		return;
+	}
+
+	Node<K, V>* temp = root->right;
+	root->right = root->left;
+	root->left = temp;
+
+	this->mirrorTreeRecurrsive(root->right);
+	this->mirrorTreeRecurrsive(root->left);
+}
+
+template<typename K, typename V>
+void BST<K, V>::childrenifyRecurrsive(Node<K, V>*& root) {
+	if (!root) {
+		return;
+	}
+
+	if (!root->left && !root->right) {
+		root->key = 1;
+		return;
+	}
+
+	this->childrenifyRecurrsive(root->right);
+	this->childrenifyRecurrsive(root->left);
+
+	unsigned int leftKey = root->left ? root->left->key : 0;
+	unsigned int rightkey = root->right ? root->right->key : 0;
+
+	root->key = leftKey + rightkey + 1;
+}
+
+template<typename K, typename V>
+unsigned int BST<K, V>::updateHeight(const Node<K, V>* const &node) {
+	unsigned int leftHeight = node->left ? node->left->height : 0;
+	unsigned int rightHeight = node->right ? node->right->height : 0;
+	return !node->left && !node->right ? 0 : 1 + std::max(leftHeight, rightHeight);
+}
+
+template<typename K, typename V>
+BSTPosition<K, V> BST<K, V>::rootPosition() const {
+	return BSTPosition<K, V>{this->root};
+}
+
+template<typename K, typename V>
+void BST<K, V>::rightJoinTrees(BSTPosition<K, V> rightPos, BST<K, V>&& tree) {
+	if (!rightPos->ptr) {
+		return;
+	}
+	rightPos.ptr->right = tree.root;
+	tree.root = nullptr;
+}
+
+template<typename K, typename V>
+void BST<K, V>::leftJoinTrees(BSTPosition<K, V> leftPos, BST<K, V>&& tree) {
+	if (!leftPos->ptr) {
+		return;
+	}
+	leftPos.ptr->left= tree.root;
+	tree.root = nullptr;
 }
 
 #endif

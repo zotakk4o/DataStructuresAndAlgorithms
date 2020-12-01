@@ -8,6 +8,7 @@ class BinaryTree {
 		virtual bool contains(const K&) = 0;
 		virtual void insert(const K&, const V&) = 0;
 		virtual bool isOrdered() = 0;
+		virtual bool isBalanced() = 0;
 };
 
 
