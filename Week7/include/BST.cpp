@@ -47,27 +47,9 @@ K BSTPosition<K, V>::getKey() {
 template<typename K, typename V>
 V BSTPosition<K, V>::getValue() {
 	if (!this->ptr) {
-		throw "Cannot get key of nullptr";
+		throw "Cannot get value of nullptr";
 	}
 	return this->ptr->value;
-}
-
-template<typename K, typename V>
-bool BSTPosition<K, V>::setKey(const K& key) {
-	if (!this->ptr) {
-		return false;
-	}
-	this->ptr->key = key;
-	return true;
-}
-
-template<typename K, typename V>
-bool BSTPosition<K, V>::setValue(const V& value) {
-	if (!this->ptr) {
-		return false;
-	}
-	this->ptr->value = value;
-	return true;
 }
 
 template<typename K, typename V>
@@ -474,8 +456,8 @@ BSTPosition<K, V> BST<K, V>::rootPosition() const {
 }
 
 template<typename K, typename V>
-void BST<K, V>::rightJoinTrees(BSTPosition<K, V> rightPos, BST<K, V>&& tree) {
-	if (!rightPos->ptr) {
+void BST<K, V>::rightJoinTrees(BSTPosition<K, V> rightPos, BST<K, V>& tree) {
+	if (!rightPos.ptr) {
 		return;
 	}
 	rightPos.ptr->right = tree.root;
@@ -483,8 +465,8 @@ void BST<K, V>::rightJoinTrees(BSTPosition<K, V> rightPos, BST<K, V>&& tree) {
 }
 
 template<typename K, typename V>
-void BST<K, V>::leftJoinTrees(BSTPosition<K, V> leftPos, BST<K, V>&& tree) {
-	if (!leftPos->ptr) {
+void BST<K, V>::leftJoinTrees(BSTPosition<K, V> leftPos, BST<K, V>& tree) {
+	if (!leftPos.ptr) {
 		return;
 	}
 	leftPos.ptr->left= tree.root;

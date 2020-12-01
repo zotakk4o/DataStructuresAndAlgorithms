@@ -130,14 +130,17 @@
     <ClCompile Include="childrenify\Main.cpp" />
     <ClCompile Include="heightConstructor\Main.cpp" />
     <ClCompile Include="include\BST.cpp" />
+    <ClCompile Include="include\BTree.cpp" />
     <ClCompile Include="include\Vector.cpp" />
     <ClCompile Include="isBalanced\Main.cpp" />
     <ClCompile Include="isOrdered\Main.cpp" />
     <ClCompile Include="mirrorTree\Main.cpp" />
+    <ClCompile Include="parseExpression\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\BinaryTree.h" />
     <ClInclude Include="include\BST.h" />
+    <ClInclude Include="include\BTree.h" />
     <ClInclude Include="include\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

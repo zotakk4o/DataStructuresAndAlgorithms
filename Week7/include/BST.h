@@ -32,8 +32,6 @@ class BSTPosition {
 		BSTPosition<K, V> right();
 		K getKey();
 		V getValue();
-		bool setKey(const K&);
-		bool setValue(const V&);
 		operator bool() const;
 };
 
@@ -73,8 +71,8 @@ class BST : public BinaryTree<K, V>
 		void childrenify();
 		bool remove(const K&);
 		void serializeTree(std::ofstream&);
-		static void rightJoinTrees(BSTPosition<K, V>, BST<K, V>&&);
-		static void leftJoinTrees(BSTPosition<K, V>, BST<K, V>&&);
+		static void rightJoinTrees(BSTPosition<K, V>, BST<K, V>&);
+		static void leftJoinTrees(BSTPosition<K, V>, BST<K, V>&);
 		BSTPosition<K, V> rootPosition() const;
 };
 
