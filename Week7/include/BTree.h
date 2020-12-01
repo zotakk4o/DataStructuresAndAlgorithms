@@ -21,9 +21,9 @@ private:
 	BNode<V>* ptr;
 public:
 	BTreePosition(BNode<V>*& = nullptr);
-	BTreePosition<V> left();
-	BTreePosition<V> right();
-	V getValue();
+	BTreePosition<V> left() const;
+	BTreePosition<V> right() const;
+	V getValue() const;
 	bool setValue(const V&);
 	operator bool() const;
 };

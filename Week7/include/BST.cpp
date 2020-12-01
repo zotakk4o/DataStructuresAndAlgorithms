@@ -14,18 +14,18 @@ template<typename K, typename V>
 BSTPosition<K, V>::BSTPosition(Node<K, V>*& _ptr) : ptr(_ptr) {}
 
 template<typename K, typename V>
-BSTPosition<K, V> BSTPosition<K, V>::left() {
+BSTPosition<K, V> BSTPosition<K, V>::left() const {
 	if (this->ptr) {
-		BSTPosition<K, V>{this->ptr->left};
+		return BSTPosition<K, V>{this->ptr->left};
 	}
 
 	return *this;
 }
 
 template<typename K, typename V>
-BSTPosition<K, V> BSTPosition<K, V>::right() {
+BSTPosition<K, V> BSTPosition<K, V>::right() const {
 	if (this->ptr) {
-		BSTPosition<K, V>{this->ptr->left};
+		return BSTPosition<K, V>{this->ptr->right};
 	}
 
 	return *this;
@@ -37,7 +37,7 @@ BSTPosition<K, V>::operator bool() const {
 }
 
 template<typename K, typename V>
-K BSTPosition<K, V>::getKey() {
+K BSTPosition<K, V>::getKey() const {
 	if (!this->ptr) {
 		throw "Cannot get key of nullptr";
 	}

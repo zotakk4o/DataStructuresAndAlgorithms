@@ -10,18 +10,18 @@ template<typename V>
 BTreePosition<V>::BTreePosition(BNode<V>*& _ptr) : ptr(_ptr) {}
 
 template<typename V>
-BTreePosition<V> BTreePosition<V>::left() {
+BTreePosition<V> BTreePosition<V>::left() const {
 	if (this->ptr) {
-		BTreePosition<V>{this->ptr->left};
+		return BTreePosition<V>{this->ptr->left};
 	}
 
 	return *this;
 }
 
 template<typename V>
-BTreePosition<V> BTreePosition<V>::right() {
+BTreePosition<V> BTreePosition<V>::right() const {
 	if (this->ptr) {
-		BTreePosition<V>{this->ptr->left};
+		return BTreePosition<V>{this->ptr->right};
 	}
 
 	return *this;
@@ -33,7 +33,7 @@ BTreePosition<V>::operator bool() const {
 }
 
 template<typename V>
-V BTreePosition<V>::getValue() {
+V BTreePosition<V>::getValue() const {
 	if (!this->ptr) {
 		throw "Cannot get value of nullptr";
 	}
