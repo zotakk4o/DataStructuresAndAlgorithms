@@ -52,6 +52,7 @@ class BST : public BinaryTree<K, V>
 		bool isBalancedRecurrsive(Node<K, V>* const&);
 		void mirrorTreeRecurrsive(Node<K, V>*&);
 		void childrenifyRecurrsive(Node<K, V>*&);
+		bool isOrderedInternals(Node<K, V>* const&, const K&, const K&);
 	public:
 		BST();
 		BST(const Vector<std::pair<K, V>>&);
@@ -63,7 +64,7 @@ class BST : public BinaryTree<K, V>
 		void prittyPrint();
 		bool contains(const K&);
 		bool isBalanced();
-		bool isOrdered();
+		bool isOrdered(const K&, const K&);
 		int calculateHeight();
 		int sumLeaves();
 		int countLeaves();

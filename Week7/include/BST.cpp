@@ -356,26 +356,21 @@ void BST<K, V>::serializeTree(std::ofstream& out) {
 }
 
 template<typename K, typename V>
-bool BST<K, V>::isOrdered() {
-	if (!this->root || (!this->root->left && !this->root->right)) {
+bool BST<K, V>::isOrdered(const K& minValue, const K& maxValue) {
+	return this->isOrderedInternals(this->root, minValue, maxValue);
+}
+
+template<typename K, typename V>
+bool BST<K, V>::isOrderedInternals(Node<K, V>* const& root, const K& minExpected, const K& maxExpected) {
+	if (!root || (!root->left && !root->right)) {
 		return true;
 	}
 
-	Node<K, V>* currRoot = this->root;
-	bool res = true;
-
-	this->root = this->root->left;
-	res = this->isOrdered();
-	this->root = currRoot;
-
-	if (!res || this->root->left->key > this->root->key || this->root->key > this->root->right->key) {
+	if (root->key < minExpected || root->key > maxExpected) {
 		return false;
 	}
-
-	this->root = this->root->right;
-	res = this->isOrdered();
-	this->root = currRoot;
-	return res;
+	
+return this->isOrderedInternals(root->left, minExpected, root->key) && this->isOrderedInternals(root->right, root->key, maxExpected);
 }
 
 template<typename K, typename V>
