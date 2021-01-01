@@ -6,6 +6,8 @@
 class Errors {
 	public:
 		static const String wrongCommandError;
+		static const String invalidInput;
+		static const String invalidSymbol;
 };
 
 #endif
