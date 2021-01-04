@@ -13,6 +13,7 @@ class Config {
 		static std::istream& inputStream;
 		static const Vector<Command*> commands;
 		static const Vector<CommandParameter*> commandsParameter;
+		virtual ~Config() = 0;
 };
  
 #endif

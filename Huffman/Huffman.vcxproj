@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HuffmanTree.cpp" />
     <ClCompile Include="include\BTree.cpp" />
     <ClCompile Include="include\File.cpp" />
     <ClCompile Include="include\String.cpp" />
@@ -143,9 +142,12 @@
     <ClCompile Include="src\commands\OutputCommand.cpp" />
     <ClCompile Include="src\config\Config.cpp" />
     <ClCompile Include="src\config\Errors.cpp" />
+    <ClCompile Include="src\helpers\Helpers.cpp" />
+    <ClCompile Include="src\HuffmanDecoder.cpp" />
+    <ClCompile Include="src\HuffmanEncoder.cpp" />
+    <ClCompile Include="src\HuffmanTree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HuffmanTree.h" />
     <ClInclude Include="include\BTree.h" />
     <ClInclude Include="include\File.h" />
     <ClInclude Include="include\String.h" />
@@ -160,6 +162,10 @@
     <ClInclude Include="src\commands\OutputCommand.h" />
     <ClInclude Include="src\config\Config.h" />
     <ClInclude Include="src\config\Errors.h" />
+    <ClInclude Include="src\helpers\Helpers.h" />
+    <ClInclude Include="src\HuffmanDecoder.h" />
+    <ClInclude Include="src\HuffmanEncoder.h" />
+    <ClInclude Include="src\HuffmanTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

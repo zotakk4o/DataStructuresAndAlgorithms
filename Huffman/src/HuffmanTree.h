@@ -9,11 +9,11 @@ class HuffmanTree
 	private:
 		struct HuffmanNode
 		{
-			char symbol;
+			unsigned char symbol;
 			unsigned int frequency;
 			HuffmanNode* left, * right;
 
-			HuffmanNode(HuffmanNode* const& = nullptr, HuffmanNode* const& = nullptr, const unsigned int& = 0, const char& = '\0');
+			HuffmanNode(HuffmanNode* const& = nullptr, HuffmanNode* const& = nullptr, const unsigned int& = 0, const unsigned char& = '\0');
 			bool operator>(const HuffmanNode&) const;
 		};
 
@@ -30,7 +30,7 @@ class HuffmanTree
 
 		void buildTree(const String&);
 		void generateCodes(HuffmanNode* const&, String = "");
-		HuffmanNode* getLeaf(const unsigned int&, const char&) const;
+		HuffmanNode* getLeaf(const unsigned int&, const unsigned char&) const;
 		void deleteTree(HuffmanNode*);
 		void saveNodes(std::ofstream&, HuffmanNode* const&) const;
 		HuffmanNode* readNodes(std::ifstream&);

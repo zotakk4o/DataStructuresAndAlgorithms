@@ -4,7 +4,7 @@
 #include<vector>
 #include<iostream>
 
-HuffmanTree::HuffmanNode::HuffmanNode(HuffmanNode* const& _left, HuffmanNode* const& _right, const unsigned int& _frequency, const char& _symbol)
+HuffmanTree::HuffmanNode::HuffmanNode(HuffmanNode* const& _left, HuffmanNode* const& _right, const unsigned int& _frequency, const unsigned unsigned char& _symbol)
 	: left(_left), right(_right), frequency(_frequency), symbol(_symbol) {}
 
 bool HuffmanTree::HuffmanNode::operator>(const HuffmanNode& other) const {
@@ -24,10 +24,6 @@ void HuffmanTree::buildTree(const String& input) {
 
 	for (unsigned int i = 0; i < inputLength; i++)
 	{
-		if (input[i] > 255 || input[i] < 0) {
-			throw Errors::invalidInput;
-		}
-
 		frequencyTable[input[i]]++;
 	}
 
@@ -82,7 +78,7 @@ HuffmanTree::~HuffmanTree() {
 	this->deleteTree(this->root);
 }
 
-HuffmanTree::HuffmanNode* HuffmanTree::getLeaf(const unsigned int& frequency, const char& symbol) const {
+HuffmanTree::HuffmanNode* HuffmanTree::getLeaf(const unsigned int& frequency, const unsigned char& symbol) const {
 	HuffmanNode* leaf = new HuffmanNode();
 	leaf->symbol = symbol;
 	leaf->frequency = frequency;
@@ -93,7 +89,7 @@ void HuffmanTree::printCodes() {
 	for (unsigned int i = 0; i < 256; i++)
 	{
 		if (this->codes[i].getLength()) {
-			std::cout << (char)i << " -> " << this->codes[i] << std::endl;
+			std::cout << (unsigned char)i << " -> " << this->codes[i] << std::endl;
 		}
 	}
 }
@@ -103,7 +99,7 @@ void HuffmanTree::saveNodes(std::ofstream& stream, HuffmanNode* const& root) con
 		return;
 	}
 
-	stream.write(&root->symbol, sizeof(char));
+	stream.write(reinterpret_cast<char*>(&root->symbol), sizeof(unsigned char));
 
 	this->saveNodes(stream, root->left);
 	this->saveNodes(stream, root->right);
@@ -120,12 +116,9 @@ HuffmanTree::HuffmanNode* HuffmanTree::readNodes(std::ifstream& stream) {
 		return nullptr;
 	}
 
-	char symbol;
+	unsigned char symbol;
 
-	stream.read(&symbol, sizeof(char));
-	if (symbol > 255 || symbol < 0) {
-		throw Errors::invalidInput;
-	}
+	stream.read(reinterpret_cast<char*>(&symbol), sizeof(unsigned char));
 	HuffmanNode* newNode = new HuffmanNode();
 	newNode->symbol = symbol;
 
