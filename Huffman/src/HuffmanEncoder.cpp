@@ -1,5 +1,8 @@
 #include "HuffmanEncoder.h"
 #include "helpers/Helpers.h"
+#include "include/File.h"
+#include "config/Config.h"
+#include "config/Errors.h"
 #include <fstream>
 
 void HuffmanEncoder::encode(const String& str, const String& outputFileName) {
@@ -17,7 +20,7 @@ void HuffmanEncoder::encode(const String& str, const String& outputFileName) {
 	file.open(outputFileName.getConstChar(), std::ofstream::binary|std::ofstream::trunc);
 
 	if (!file) {
-		return;
+		throw Errors::couldNotSaveCodeError;
 	}
 
 	file.write(reinterpret_cast<char*>(&padding), sizeof(unsigned char));
@@ -29,4 +32,17 @@ void HuffmanEncoder::encode(const String& str, const String& outputFileName) {
 
 		file.write(reinterpret_cast<char*>(&encodedChar), sizeof(unsigned char));
 	}
+
+	file.close();
+
+	String treeFileName = File::getFileName(outputFileName, false) + Config::treeFileNameSuffix;
+	file.open(treeFileName.getConstChar(), std::ofstream::binary | std::ofstream::trunc);
+	
+	if (!file) {
+		throw Errors::couldNotSaveTreeError;
+	}
+
+	file << tree;
+
+	file.close();
 }

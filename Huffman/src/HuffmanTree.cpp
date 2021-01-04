@@ -56,7 +56,7 @@ void HuffmanTree::generateCodes(HuffmanNode* const& root, String code)
 		return;
 
 	if (!root->left && !root->right) {
-		this->codes[root->symbol] = code.getLength() ? code :  "0";
+		this->codes[root->symbol] = code.getLength() ? code :  "1";
 	}
 
 	generateCodes(root->left, code + "0");
@@ -176,9 +176,14 @@ String HuffmanTree::decode(const String& str) {
 	String res;
 	unsigned int strLength = str.getLength();
 	unsigned int index = 0;
+	unsigned int indexBeforeCall = 0;
 
 	while (index < strLength) {
 		this->decodeInternal(this->root, str, index, res);
+		if (indexBeforeCall == index) {
+			indexBeforeCall++;
+			index++;
+		}
 	}
 	return res;
 }

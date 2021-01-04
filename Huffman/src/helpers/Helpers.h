@@ -7,6 +7,7 @@ class Helpers
 {
 	public:
 		static unsigned char BinaryStringToChar(const String&);
+		static String CharToBinaryString(unsigned char);
 		virtual ~Helpers() = 0;
 };
 

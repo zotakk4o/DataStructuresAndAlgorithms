@@ -13,6 +13,7 @@ class Config {
 		static std::istream& inputStream;
 		static const Vector<Command*> commands;
 		static const Vector<CommandParameter*> commandsParameter;
+		static const String treeFileNameSuffix;
 		virtual ~Config() = 0;
 };
  

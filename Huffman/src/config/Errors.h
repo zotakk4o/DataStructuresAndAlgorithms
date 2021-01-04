@@ -8,6 +8,10 @@ class Errors {
 		static const String wrongCommandError;
 		static const String invalidInput;
 		static const String invalidSymbol;
+		static const String couldNotSaveCodeError;
+		static const String couldNotSaveTreeError;
+		static const String couldNotReadCodeError;
+		static const String couldNotReadTreeError;
 		virtual ~Errors() = 0;
 };
 

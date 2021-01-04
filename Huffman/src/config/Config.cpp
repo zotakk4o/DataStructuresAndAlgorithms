@@ -9,6 +9,8 @@ const char Config::commandDelimiter = ' ';
 
 std::istream& Config::inputStream = std::cin;
 
+const String Config::treeFileNameSuffix = "-tree.dat";
+
 const Vector<Command*> Config::commands{
 	new CompressCommand(),
 	new DecompressCommand(),
