@@ -133,11 +133,9 @@
     <ClCompile Include="include\Vector.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\CommandsProcessor.cpp" />
-    <ClCompile Include="src\commands\BaseClasses\Command.cpp" />
-    <ClCompile Include="src\commands\BaseClasses\CommandParameter.cpp" />
+    <ClCompile Include="src\commands\BaseClasses\CommandParameters.cpp" />
     <ClCompile Include="src\commands\CompressCommand.cpp" />
     <ClCompile Include="src\commands\DecompressCommand.cpp" />
-    <ClCompile Include="src\commands\ExitCommand.cpp" />
     <ClCompile Include="src\commands\InputCommand.cpp" />
     <ClCompile Include="src\commands\OutputCommand.cpp" />
     <ClCompile Include="src\config\Config.cpp" />
@@ -153,11 +151,9 @@
     <ClInclude Include="include\String.h" />
     <ClInclude Include="include\Vector.h" />
     <ClInclude Include="src\CommandsProcessor.h" />
-    <ClInclude Include="src\commands\BaseClasses\Command.h" />
-    <ClInclude Include="src\commands\BaseClasses\CommandParameter.h" />
+    <ClInclude Include="src\commands\BaseClasses\CommandParameters.h" />
     <ClInclude Include="src\commands\CompressCommand.h" />
     <ClInclude Include="src\commands\DecompressCommand.h" />
-    <ClInclude Include="src\commands\ExitCommand.h" />
     <ClInclude Include="src\commands\InputCommand.h" />
     <ClInclude Include="src\commands\OutputCommand.h" />
     <ClInclude Include="src\config\Config.h" />
@@ -166,6 +162,12 @@
     <ClInclude Include="src\HuffmanDecoder.h" />
     <ClInclude Include="src\HuffmanEncoder.h" />
     <ClInclude Include="src\HuffmanTree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test-data\input.txt" />
+    <Text Include="test-data\input1.txt" />
+    <Text Include="test-data\input2.txt" />
+    <Text Include="test-data\input3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

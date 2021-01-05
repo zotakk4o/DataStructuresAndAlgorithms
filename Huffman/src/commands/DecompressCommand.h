@@ -1,13 +1,13 @@
 #ifndef DECOMPRESSCOMMAND_H
 #define DECOMPRESSCOMMAND_H
 
-#include "BaseClasses/Command.h"
+#include "BaseClasses/CommandParameters.h"
 #include "include/String.h"
 
-class DecompressCommand : public Command
+class DecompressCommand : public CommandParameters
 {
 	public:
-		virtual void execute() const;
+		virtual void execute(Vector<String*>&) const;
 		virtual String toString() const;
 };
 

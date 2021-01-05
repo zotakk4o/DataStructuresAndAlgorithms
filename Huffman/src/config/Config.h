@@ -3,17 +3,17 @@
 
 #include "include/String.h"
 #include "include/Vector.cpp"
-#include "../commands/BaseClasses/Command.h"
-#include "../commands/BaseClasses/CommandParameter.h"
+#include "../commands/BaseClasses/CommandParameters.h"
 #include <iostream>
 
 class Config {
 	public:
 		static const char commandDelimiter;
 		static std::istream& inputStream;
-		static const Vector<Command*> commands;
-		static const Vector<CommandParameter*> commandsParameter;
+		static const Vector<CommandParameters*> commandsParameters;
 		static const String treeFileNameSuffix;
+		static const String inputFileCommand;
+		static const String outputFileCommand;
 		virtual ~Config() = 0;
 };
  

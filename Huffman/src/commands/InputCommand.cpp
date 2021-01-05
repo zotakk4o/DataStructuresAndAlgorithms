@@ -1,7 +1,7 @@
 #include "InputCommand.h"
 
-void InputCommand::execute(const String&) const {
-
+void InputCommand::execute(Vector<String*>& parameters) const {
+	*parameters[1] = *parameters[0];
 }
 
 String InputCommand::toString() const {

@@ -1,11 +1,11 @@
 #ifndef COMPRESSCOMMAND_H
 #define COMPRESSCOMMAND_H
 
-#include "BaseClasses/Command.h"
+#include "BaseClasses/CommandParameters.h"
 
-class CompressCommand : public Command {
+class CompressCommand : public CommandParameters {
 	public:
-		virtual void execute() const;
+		virtual void execute(Vector<String*>&) const;
 		virtual String toString() const;
 };
 

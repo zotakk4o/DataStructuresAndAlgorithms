@@ -5,7 +5,10 @@
 #include "CommandsProcessor.h"
 
 class CommandsProcessor {
-	protected:
+	private:
+		String inputFileName;
+		String outputFileName;
+
 		void parseCommands();
 		bool parseCommand(const String&);
 	public:

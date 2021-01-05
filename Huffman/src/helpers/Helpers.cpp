@@ -1,4 +1,5 @@
 #include "Helpers.h"
+#include "src/config/Config.h"
 #include <math.h>
 #include <iostream>
 
@@ -33,4 +34,14 @@ String Helpers::CharToBinaryString(unsigned char symbol) {
 	}
 
 	return res;
+}
+
+void Helpers::exitProgram() {
+	unsigned int commandsParametersSize = Config::commandsParameters.getSize();
+	for (size_t i = 0; i < commandsParametersSize; i++)
+	{
+		delete Config::commandsParameters[i];
+	}
+
+	exit(EXIT_SUCCESS);
 }

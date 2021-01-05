@@ -36,12 +36,6 @@
     <ClCompile Include="src\config\Errors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\commands\BaseClasses\Command.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\commands\BaseClasses\CommandParameter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\commands\CompressCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,12 +48,6 @@
     <ClCompile Include="src\commands\OutputCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\CommandsProcessor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\commands\ExitCommand.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\HuffmanDecoder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -70,6 +58,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\helpers\Helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandsProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\BaseClasses\CommandParameters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,16 +80,10 @@
     <ClInclude Include="include\BTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\commands\BaseClasses\Command.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\config\Config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\config\Errors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\commands\BaseClasses\CommandParameter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\commands\CompressCommand.h">
@@ -110,12 +98,6 @@
     <ClInclude Include="src\commands\OutputCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\CommandsProcessor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\commands\ExitCommand.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\HuffmanDecoder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -128,5 +110,17 @@
     <ClInclude Include="src\helpers\Helpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\CommandsProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\commands\BaseClasses\CommandParameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test-data\input.txt" />
+    <Text Include="test-data\input1.txt" />
+    <Text Include="test-data\input2.txt" />
+    <Text Include="test-data\input3.txt" />
   </ItemGroup>
 </Project>
