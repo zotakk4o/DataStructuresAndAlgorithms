@@ -1,6 +1,9 @@
 #include<iostream>
 #include<new>
+#include<string>
 #include "File.h"
+#include <iterator>
+#include <algorithm>
 
 File::~File() {};
 
@@ -33,17 +36,8 @@ bool File::open(const String& fileName) {
 		return false;
 	}
 
-	String line;
-
-	while (String::getLine(fs, line)) {
-		if (line.getLength()) {
-			this->data += line + '\n';
-		}
-	}
-
-	if (line.getLength()) {
-		this->data += line + '\n';
-	}
+	std::string content((std::istreambuf_iterator<char>(fs)), (std::istreambuf_iterator<char>()));
+	this->data = content.c_str();
 
 	fs.close();
 	this->opened = true;

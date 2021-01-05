@@ -4,12 +4,14 @@
 #include "config/Config.h"
 #include "config/Errors.h"
 #include <fstream>
+#include <iostream>
 
 void HuffmanEncoder::encode(const String& str, const String& outputFileName) {
 	HuffmanTree tree{ str };
 	String code = tree.encode(str);
+	unsigned int encodedBits = code.getLength();
 	unsigned int codeLength = code.getLength();
-	unsigned char padding = 0;
+	char padding = 0;
 
 	while ((padding + codeLength) % 8 != 0) {
 		padding++;
@@ -22,17 +24,16 @@ void HuffmanEncoder::encode(const String& str, const String& outputFileName) {
 	if (!file) {
 		throw Errors::couldNotSaveCodeError;
 	}
-
-	file.write(reinterpret_cast<char*>(&padding), sizeof(unsigned char));
-
+	std::string test;
+	test += padding;
 	for (unsigned int i = 0; i < padding + codeLength; i+= 8)
 	{
 		String symbol = code.substring(i, 8);
-		unsigned char encodedChar = Helpers::BinaryStringToChar(symbol);
-
-		file.write(reinterpret_cast<char*>(&encodedChar), sizeof(unsigned char));
+		test += Helpers::BinaryStringToChar(symbol);;
 	}
 
+	file << test;
+	
 	file.close();
 
 	String treeFileName = File::getFileName(outputFileName, false) + Config::treeFileNameSuffix;
@@ -45,4 +46,8 @@ void HuffmanEncoder::encode(const String& str, const String& outputFileName) {
 	file << tree;
 
 	file.close();
+
+	std::cout << "Encoded bits: " << encodedBits << std::endl;
+	std::cout << "Original bits: " << (str.getLength() * 8) << std::endl;
+	std::cout << "Compression ratio: " << (str.getLength() == 0 ? 0 : ((double)encodedBits / (str.getLength() * 8))) << std::endl;
 }

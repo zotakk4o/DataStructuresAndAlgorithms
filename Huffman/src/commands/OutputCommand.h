@@ -8,6 +8,7 @@ class OutputCommand :
 	public CommandParameters
 {
 	public:
+		virtual unsigned int getKeywordsCount() const;
 		virtual void execute(Vector<String*>&) const;
 		virtual String toString() const;
 };

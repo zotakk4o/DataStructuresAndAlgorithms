@@ -36,6 +36,20 @@ String Helpers::CharToBinaryString(unsigned char symbol) {
 	return res;
 }
 
+String Helpers::convertCodeForDebugging(const String& binCode) {
+	String res;
+	unsigned int binCodeLength = binCode.getLength();
+	for (unsigned int i = 0; i < binCodeLength; i += 8)
+	{
+		res += binCode.substring(i, 8);
+		if (i != binCodeLength - 9) {
+			res += " ";
+		}
+	}
+
+	return res;
+}
+
 void Helpers::exitProgram() {
 	unsigned int commandsParametersSize = Config::commandsParameters.getSize();
 	for (size_t i = 0; i < commandsParametersSize; i++)

@@ -4,14 +4,16 @@
 #include "include/File.h"
 #include "config/Config.h"
 #include "config/Errors.h"
+#include <string>
 
 String HuffmanDecoder::decode(const String& inputFileName) {
 	std::ifstream file;
 	unsigned char padding;
-	String encodedString;
+	std::string encodedString;
 	String binaryCode;
 
 	file.open(inputFileName.getConstChar(), std::ofstream::binary);
+	file.seekg(0);
 
 	if (!file) {
 		throw Errors::couldNotReadCodeError;
@@ -26,14 +28,13 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 
 	file.close();
 
-	unsigned int encodedStringLength = encodedString.getLength();
+	unsigned int encodedStringLength = encodedString.length();
 	for (unsigned int i = 0; i < encodedStringLength; i++)
-	{
+	{	
 		binaryCode += Helpers::CharToBinaryString(encodedString[i]);
 	}
 
 	binaryCode = binaryCode.substring(padding, binaryCode.getLength() - padding);
-
 	String treeFileName = File::getFileName(inputFileName, false) + Config::treeFileNameSuffix;
 	file.open(treeFileName.getConstChar(), std::ifstream::binary);
 
@@ -44,6 +45,5 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 	HuffmanTree tree;
 
 	file >> tree;
-
 	return tree.decode(binaryCode);
 }

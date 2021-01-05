@@ -4,6 +4,9 @@
 #include "include/String.h"
 #include "CommandsProcessor.h"
 
+/// <summary>
+/// Class responsible for command pattern execution
+/// </summary>
 class CommandsProcessor {
 	private:
 		String inputFileName;
