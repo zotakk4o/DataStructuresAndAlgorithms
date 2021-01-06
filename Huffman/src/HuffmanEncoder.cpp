@@ -1,4 +1,4 @@
-#include "HuffmanEncoder.h"
+﻿#include "HuffmanEncoder.h"
 #include "helpers/Helpers.h"
 #include "include/File.h"
 #include "config/Config.h"
@@ -24,12 +24,13 @@ void HuffmanEncoder::encode(const String& str, const String& outputFileName) {
 	if (!file) {
 		throw Errors::couldNotSaveCodeError;
 	}
+
 	std::string test;
 	test += padding;
 	for (unsigned int i = 0; i < padding + codeLength; i+= 8)
 	{
 		String symbol = code.substring(i, 8);
-		test += Helpers::BinaryStringToChar(symbol);;
+		test += Helpers::BinaryStringToChar(symbol);
 	}
 
 	file << test;

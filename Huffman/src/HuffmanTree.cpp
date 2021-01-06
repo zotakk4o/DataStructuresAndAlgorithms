@@ -24,7 +24,8 @@ void HuffmanTree::buildTree(const String& input) {
 
 	for (unsigned int i = 0; i < inputLength; i++)
 	{
-		frequencyTable[input[i]]++;
+		unsigned char index = (unsigned char)input[i];
+		frequencyTable[index]++;
 	}
 
 	std::priority_queue < HuffmanNode*, std::vector<HuffmanNode*>, HuffmanTree::Comparator > priorityQueue;
@@ -142,10 +143,12 @@ String HuffmanTree::encode(const String& str) {
 	unsigned int strLength = str.getLength();
 	for (unsigned int i = 0; i < strLength; i++)
 	{
-		if (!this->codes[str[i]].getLength()) {
+		unsigned char index = (unsigned char)str[i];
+		if (!this->codes[index].getLength()) {
 			throw Errors::invalidSymbol;
 		}
-		res += this->codes[str[i]];
+		
+		res += this->codes[index];
 	}
 
 

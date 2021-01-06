@@ -146,7 +146,12 @@ String& String::operator+=(const char* str) {
 }
 
 String& String::operator+=(const char& character) {
-	this->copy(*this + character);
+	if (this->length + 1 >= this->capacity) {
+		this->reserve(this->length);
+	}
+
+	this->str[this->length++] = character;
+	this->str[this->length] = '\0';
 
 	return *this;
 }

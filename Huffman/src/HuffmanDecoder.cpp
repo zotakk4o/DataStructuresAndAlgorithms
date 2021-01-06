@@ -9,6 +9,7 @@
 String HuffmanDecoder::decode(const String& inputFileName) {
 	std::ifstream file;
 	unsigned char padding;
+	char charPadding;
 	std::string encodedString;
 	String binaryCode;
 
@@ -18,12 +19,13 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 	if (!file) {
 		throw Errors::couldNotReadCodeError;
 	}
+	
+	file.read(&charPadding, sizeof(unsigned char));
+	padding = (unsigned char)charPadding;
 
-	file.read(reinterpret_cast<char*>(&padding), sizeof(unsigned char));
-
-	unsigned char symbolFromFile;
-	while (file.read(reinterpret_cast<char*>(&symbolFromFile), sizeof(unsigned char))) {
-		encodedString += symbolFromFile;
+	char symbolFromFile;
+	while (file.read(&symbolFromFile, sizeof(unsigned char))) {
+		encodedString += (unsigned char)symbolFromFile;
 	}
 
 	file.close();
