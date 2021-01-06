@@ -51,5 +51,5 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 }
 
 String HuffmanDecoder::debug(const String& inputFileName) {
-
+	return "";
 }
