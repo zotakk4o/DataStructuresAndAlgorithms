@@ -18,6 +18,11 @@ class HuffmanDecoder
 		/// <returns>String</returns>
 		static String decode(const String&);
 
+		/// <summary>
+		/// Converts a given BINARY sequence to a byte-separated string
+		/// </summary>
+		/// <param>const String& the BINARY string to be debugged</param>
+		/// <returns>String</returns>
 		static String debug(const String&);
 		virtual ~HuffmanDecoder() = 0;
 };
