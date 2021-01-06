@@ -47,7 +47,7 @@ String Helpers::convertCodeForDebugging(String binCode) {
 
 	for (unsigned int i = 0; i < binCodeLength + padding; i += 8)
 	{
-		res += binCode.substring(i, 8);
+		res += (int)Helpers::BinaryStringToChar(binCode.substring(i, 8));
 		if (i != binCodeLength - 9) {
 			res += " ";
 		}

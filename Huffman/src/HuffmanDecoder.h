@@ -19,7 +19,7 @@ class HuffmanDecoder
 		static String decode(const String&);
 
 		/// <summary>
-		/// Converts a given BINARY sequence to a byte-separated string
+		/// Converts a given BINARY sequence to an ASCII char
 		/// </summary>
 		/// <param>const String& the BINARY string to be debugged</param>
 		/// <returns>String</returns>

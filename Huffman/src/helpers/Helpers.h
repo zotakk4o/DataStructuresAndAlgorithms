@@ -24,7 +24,7 @@ class Helpers
 		static String CharToBinaryString(unsigned char);
 
 		/// <summary>
-		/// Coverts a character to byte-separated binary sequence
+		/// Coverts a character to an ASCII char
 		/// </summary>
 		/// <param>String the code to be debugged</param>
 		/// <returns>String</returns>
