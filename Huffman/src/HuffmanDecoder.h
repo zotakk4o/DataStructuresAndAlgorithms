@@ -8,6 +8,8 @@
 /// </summary>
 class HuffmanDecoder
 {
+	private:
+		static String getBinaryCodeFromFile(const String&);
 	public:
 		/// <summary>
 		/// Decode a given BINARY string

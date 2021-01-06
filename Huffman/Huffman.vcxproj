@@ -135,6 +135,7 @@
     <ClCompile Include="src\CommandsProcessor.cpp" />
     <ClCompile Include="src\commands\BaseClasses\CommandParameters.cpp" />
     <ClCompile Include="src\commands\CompressCommand.cpp" />
+    <ClCompile Include="src\commands\DebugCommand.cpp" />
     <ClCompile Include="src\commands\DecompressCommand.cpp" />
     <ClCompile Include="src\commands\InputCommand.cpp" />
     <ClCompile Include="src\commands\OutputCommand.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="src\CommandsProcessor.h" />
     <ClInclude Include="src\commands\BaseClasses\CommandParameters.h" />
     <ClInclude Include="src\commands\CompressCommand.h" />
+    <ClInclude Include="src\commands\DebugCommand.h" />
     <ClInclude Include="src\commands\DecompressCommand.h" />
     <ClInclude Include="src\commands\InputCommand.h" />
     <ClInclude Include="src\commands\OutputCommand.h" />

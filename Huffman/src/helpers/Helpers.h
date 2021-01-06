@@ -23,7 +23,12 @@ class Helpers
 		/// <returns>String</returns>
 		static String CharToBinaryString(unsigned char);
 
-		static String convertCodeForDebugging(const String&);
+		/// <summary>
+		/// Coverts a character to byte-separated binary sequence
+		/// </summary>
+		/// <param>String the code to be debugged</param>
+		/// <returns>String</returns>
+		static String convertCodeForDebugging(String);
 
 		/// <summary>
 		/// Stops the currently running program.

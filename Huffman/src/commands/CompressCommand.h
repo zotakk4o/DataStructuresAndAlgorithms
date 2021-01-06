@@ -4,7 +4,7 @@
 #include "BaseClasses/CommandParameters.h"
 
 /// <summary>
-/// A Class responsible for handling the compression process. Command name is "c"
+/// A Class responsible for handling the compression process. Command usage is "c"
 /// </summary>
 class CompressCommand : public CommandParameters {
 	public:

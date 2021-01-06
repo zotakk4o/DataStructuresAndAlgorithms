@@ -3,6 +3,7 @@
 #include "src/commands/DecompressCommand.h"
 #include "src/commands/InputCommand.h"
 #include "src/commands/OutputCommand.h"
+#include "src/commands/DebugCommand.h"
 
 const char Config::commandDelimiter = ' ';
 
@@ -17,5 +18,6 @@ const Vector<CommandParameters*> Config::commandsParameters{
 	new CompressCommand(),
 	new DecompressCommand(),
 	new InputCommand(),
-	new OutputCommand()
+	new OutputCommand(),
+	new DebugCommand()
 };

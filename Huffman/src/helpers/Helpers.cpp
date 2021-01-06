@@ -36,10 +36,16 @@ String Helpers::CharToBinaryString(unsigned char symbol) {
 	return res;
 }
 
-String Helpers::convertCodeForDebugging(const String& binCode) {
+String Helpers::convertCodeForDebugging(String binCode) {
 	String res;
+	char padding = 0;
 	unsigned int binCodeLength = binCode.getLength();
-	for (unsigned int i = 0; i < binCodeLength; i += 8)
+	while ((padding + binCodeLength) % 8 != 0) {
+		padding++;
+		binCode = String{ "0" } + binCode;
+	}
+
+	for (unsigned int i = 0; i < binCodeLength + padding; i += 8)
 	{
 		res += binCode.substring(i, 8);
 		if (i != binCodeLength - 9) {

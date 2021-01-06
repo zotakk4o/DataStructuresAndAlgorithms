@@ -6,7 +6,7 @@
 #include "config/Errors.h"
 #include <string>
 
-String HuffmanDecoder::decode(const String& inputFileName) {
+String HuffmanDecoder::getBinaryCodeFromFile(const String& inputFileName) {
 	std::ifstream file;
 	unsigned char padding;
 	char charPadding;
@@ -19,7 +19,7 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 	if (!file) {
 		throw Errors::couldNotReadCodeError;
 	}
-	
+
 	file.read(&charPadding, sizeof(unsigned char));
 	padding = (unsigned char)charPadding;
 
@@ -32,11 +32,16 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 
 	unsigned int encodedStringLength = encodedString.length();
 	for (unsigned int i = 0; i < encodedStringLength; i++)
-	{	
+	{
 		binaryCode += Helpers::CharToBinaryString(encodedString[i]);
 	}
 
-	binaryCode = binaryCode.substring(padding, binaryCode.getLength() - padding);
+	return binaryCode.substring(padding, binaryCode.getLength() - padding);
+}
+
+String HuffmanDecoder::decode(const String& inputFileName) {
+	std::ifstream file;
+	String binaryCode = HuffmanDecoder::getBinaryCodeFromFile(inputFileName);
 	String treeFileName = File::getFileName(inputFileName, false) + Config::treeFileNameSuffix;
 	file.open(treeFileName.getConstChar(), std::ifstream::binary);
 
@@ -51,5 +56,5 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 }
 
 String HuffmanDecoder::debug(const String& inputFileName) {
-	return "";
+	return Helpers::convertCodeForDebugging(HuffmanDecoder::getBinaryCodeFromFile(inputFileName));
 }
