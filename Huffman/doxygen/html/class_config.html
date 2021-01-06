@@ -69,6 +69,11 @@ $(function() {
 <div class="title">Config Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class responsible for storing project configuration  
+ <a href="class_config.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_config_8h_source.html">Config.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -78,19 +83,21 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><b>commandD
 <tr class="memitem:aee9e8261298b90e827b78dc3057c2c57"><td class="memItemLeft" align="right" valign="top"><a id="aee9e8261298b90e827b78dc3057c2c57"></a>
 static std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>inputStream</b> = std::cin</td></tr>
 <tr class="separator:aee9e8261298b90e827b78dc3057c2c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38687648e205fb33463f6a5845aacf9b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_command_parameters.html">CommandParameters</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commandsParameters</b></td></tr>
+<tr class="memitem:a38687648e205fb33463f6a5845aacf9b"><td class="memItemLeft" align="right" valign="top">static const Vector&lt; <a class="el" href="class_command_parameters.html">CommandParameters</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>commandsParameters</b></td></tr>
 <tr class="separator:a38687648e205fb33463f6a5845aacf9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3ff65fb5b796d6a04adf162f47541b6"><td class="memItemLeft" align="right" valign="top"><a id="ab3ff65fb5b796d6a04adf162f47541b6"></a>
-static const <a class="el" href="class_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><b>treeFileNameSuffix</b> = &quot;-tree.dat&quot;</td></tr>
+static const String&#160;</td><td class="memItemRight" valign="bottom"><b>treeFileNameSuffix</b> = &quot;-tree.dat&quot;</td></tr>
 <tr class="separator:ab3ff65fb5b796d6a04adf162f47541b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2577bf96c4cc944d795c7c0fccc40f81"><td class="memItemLeft" align="right" valign="top"><a id="a2577bf96c4cc944d795c7c0fccc40f81"></a>
-static const <a class="el" href="class_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inputFileCommand</b></td></tr>
+static const String&#160;</td><td class="memItemRight" valign="bottom"><b>inputFileCommand</b></td></tr>
 <tr class="separator:a2577bf96c4cc944d795c7c0fccc40f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a892168403cd9b421bc80f1f387f8b6fd"><td class="memItemLeft" align="right" valign="top"><a id="a892168403cd9b421bc80f1f387f8b6fd"></a>
-static const <a class="el" href="class_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><b>outputFileCommand</b></td></tr>
+static const String&#160;</td><td class="memItemRight" valign="bottom"><b>outputFileCommand</b></td></tr>
 <tr class="separator:a892168403cd9b421bc80f1f387f8b6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class responsible for storing project configuration </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a38687648e205fb33463f6a5845aacf9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38687648e205fb33463f6a5845aacf9b">&#9670;&nbsp;</a></span>commandsParameters</h2>
 
@@ -101,7 +108,7 @@ static const <a class="el" href="class_string.html">String</a>&#160;</td><td cla
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_command_parameters.html">CommandParameters</a> * &gt; Config::commandsParameters</td>
+          <td class="memname">const Vector&lt; <a class="el" href="class_command_parameters.html">CommandParameters</a> * &gt; Config::commandsParameters</td>
         </tr>
       </table>
   </td>
@@ -116,10 +123,10 @@ static const <a class="el" href="class_string.html">String</a>&#160;</td><td cla
 <div class="line">    <span class="keyword">new</span> <a class="code" href="class_input_command.html">InputCommand</a>(),</div>
 <div class="line">    <span class="keyword">new</span> <a class="code" href="class_output_command.html">OutputCommand</a>()</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_compress_command_html"><div class="ttname"><a href="class_compress_command.html">CompressCommand</a></div><div class="ttdef"><b>Definition:</b> CompressCommand.h:6</div></div>
-<div class="ttc" id="aclass_decompress_command_html"><div class="ttname"><a href="class_decompress_command.html">DecompressCommand</a></div><div class="ttdef"><b>Definition:</b> DecompressCommand.h:8</div></div>
-<div class="ttc" id="aclass_input_command_html"><div class="ttname"><a href="class_input_command.html">InputCommand</a></div><div class="ttdef"><b>Definition:</b> InputCommand.h:9</div></div>
-<div class="ttc" id="aclass_output_command_html"><div class="ttname"><a href="class_output_command.html">OutputCommand</a></div><div class="ttdef"><b>Definition:</b> OutputCommand.h:9</div></div>
+<div class="ttc" id="aclass_compress_command_html"><div class="ttname"><a href="class_compress_command.html">CompressCommand</a></div><div class="ttdoc">A Class responsible for handling the compression process. Command name is &quot;c&quot;</div><div class="ttdef"><b>Definition:</b> CompressCommand.h:9</div></div>
+<div class="ttc" id="aclass_decompress_command_html"><div class="ttname"><a href="class_decompress_command.html">DecompressCommand</a></div><div class="ttdoc">A Class responsible for handling the decompression process. Command usage is &quot;d&quot;</div><div class="ttdef"><b>Definition:</b> DecompressCommand.h:11</div></div>
+<div class="ttc" id="aclass_input_command_html"><div class="ttname"><a href="class_input_command.html">InputCommand</a></div><div class="ttdoc">A Class responsible for indicating the input file. Command usage is &quot;i &lt;file-name&gt;&quot;</div><div class="ttdef"><b>Definition:</b> InputCommand.h:12</div></div>
+<div class="ttc" id="aclass_output_command_html"><div class="ttname"><a href="class_output_command.html">OutputCommand</a></div><div class="ttdoc">A Class responsible for indicating the output file. Command usage is &quot;o &lt;file-name&gt;&quot;</div><div class="ttdef"><b>Definition:</b> OutputCommand.h:12</div></div>
 </div><!-- fragment -->
 </div>
 </div>

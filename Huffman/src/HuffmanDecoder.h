@@ -15,6 +15,8 @@ class HuffmanDecoder
 		/// <param>const String& the BINARY string to be decoded</param>
 		/// <returns>String</returns>
 		static String decode(const String&);
+
+		static String debug(const String&);
 		virtual ~HuffmanDecoder() = 0;
 };
 

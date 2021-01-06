@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['decode_40',['decode',['../class_huffman_decoder.html#a42e37e71e9293de3d566a01286874256',1,'HuffmanDecoder']]]
+  ['binarystringtochar_36',['BinaryStringToChar',['../class_helpers.html#af7fc806c1a86a8e40f8d708904ed0e69',1,'Helpers']]]
 ];

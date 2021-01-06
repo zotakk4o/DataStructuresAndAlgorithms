@@ -76,19 +76,19 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;BaseClasses/CommandParameters.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;include/String.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_decompress_command.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_decompress_command.html">DecompressCommand</a> : <span class="keyword">public</span> <a class="code" href="class_command_parameters.html">CommandParameters</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> execute(<a class="code" href="class_vector.html">Vector&lt;String*&gt;</a>&amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_string.html">String</a> toString() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="ttc" id="aclass_command_parameters_html"><div class="ttname"><a href="class_command_parameters.html">CommandParameters</a></div><div class="ttdef"><b>Definition:</b> CommandParameters.h:6</div></div>
-<div class="ttc" id="aclass_decompress_command_html"><div class="ttname"><a href="class_decompress_command.html">DecompressCommand</a></div><div class="ttdef"><b>Definition:</b> DecompressCommand.h:8</div></div>
-<div class="ttc" id="aclass_string_html"><div class="ttname"><a href="class_string.html">String</a></div><div class="ttdef"><b>Definition:</b> String.h:6</div></div>
-<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdef"><b>Definition:</b> Vector.h:6</div></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_decompress_command.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_decompress_command.html">DecompressCommand</a> : <span class="keyword">public</span> <a class="code" href="class_command_parameters.html">CommandParameters</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_decompress_command.html#a0beb65fa90605b9e6098f23e2aed90ca">execute</a>(Vector&lt;String*&gt;&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">virtual</span> String <a class="code" href="class_decompress_command.html#a3dd7503c635d433ba7ccbe24f9d8ef84">toString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="ttc" id="aclass_command_parameters_html"><div class="ttname"><a href="class_command_parameters.html">CommandParameters</a></div><div class="ttdoc">Base Class, defining the main properties of a command</div><div class="ttdef"><b>Definition:</b> CommandParameters.h:9</div></div>
+<div class="ttc" id="aclass_decompress_command_html"><div class="ttname"><a href="class_decompress_command.html">DecompressCommand</a></div><div class="ttdoc">A Class responsible for handling the decompression process. Command usage is &quot;d&quot;</div><div class="ttdef"><b>Definition:</b> DecompressCommand.h:11</div></div>
+<div class="ttc" id="aclass_decompress_command_html_a0beb65fa90605b9e6098f23e2aed90ca"><div class="ttname"><a href="class_decompress_command.html#a0beb65fa90605b9e6098f23e2aed90ca">DecompressCommand::execute</a></div><div class="ttdeci">virtual void execute(Vector&lt; String * &gt; &amp;) const</div><div class="ttdoc">Decode a given BINARY string</div><div class="ttdef"><b>Definition:</b> DecompressCommand.cpp:6</div></div>
+<div class="ttc" id="aclass_decompress_command_html_a3dd7503c635d433ba7ccbe24f9d8ef84"><div class="ttname"><a href="class_decompress_command.html#a3dd7503c635d433ba7ccbe24f9d8ef84">DecompressCommand::toString</a></div><div class="ttdeci">virtual String toString() const</div><div class="ttdoc">Gives the keyword of the command to be executed</div><div class="ttdef"><b>Definition:</b> DecompressCommand.cpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

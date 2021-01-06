@@ -12,7 +12,14 @@ class CommandsProcessor {
 		String inputFileName;
 		String outputFileName;
 
+		/// <summary>
+		/// Parses input commands from console
+		/// </summary>
 		void parseCommands();
+
+		/// <summary>
+		/// Parses a given command
+		/// </summary>
 		bool parseCommand(const String&);
 	public:
 		void start();

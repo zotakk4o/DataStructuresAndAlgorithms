@@ -4,6 +4,9 @@
 #include "BaseClasses/CommandParameters.h"
 #include "include/String.h"
 
+/// <summary>
+/// A Class responsible for handling the decompression process. Command usage is "d"
+/// </summary>
 class DecompressCommand : public CommandParameters
 {
 	public:

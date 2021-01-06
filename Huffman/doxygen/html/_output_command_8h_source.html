@@ -76,21 +76,22 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;BaseClasses/CommandParameters.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;include/String.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_output_command.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_output_command.html">OutputCommand</a> :</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_command_parameters.html">CommandParameters</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getKeywordsCount() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> execute(<a class="code" href="class_vector.html">Vector&lt;String*&gt;</a>&amp;) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="class_string.html">String</a> toString() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="ttc" id="aclass_command_parameters_html"><div class="ttname"><a href="class_command_parameters.html">CommandParameters</a></div><div class="ttdef"><b>Definition:</b> CommandParameters.h:6</div></div>
-<div class="ttc" id="aclass_output_command_html"><div class="ttname"><a href="class_output_command.html">OutputCommand</a></div><div class="ttdef"><b>Definition:</b> OutputCommand.h:9</div></div>
-<div class="ttc" id="aclass_string_html"><div class="ttname"><a href="class_string.html">String</a></div><div class="ttdef"><b>Definition:</b> String.h:6</div></div>
-<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdef"><b>Definition:</b> Vector.h:6</div></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_output_command.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_output_command.html">OutputCommand</a> :</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_command_parameters.html">CommandParameters</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_output_command.html#a85d42c483ab8a6f704650c1b7ae431d7">getKeywordsCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_command.html#a2d3add460c8db1dd3e3dd048bded0de0">execute</a>(Vector&lt;String*&gt;&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">virtual</span> String <a class="code" href="class_output_command.html#a8802f0799e2f758dfebd0442211a72a2">toString</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="ttc" id="aclass_command_parameters_html"><div class="ttname"><a href="class_command_parameters.html">CommandParameters</a></div><div class="ttdoc">Base Class, defining the main properties of a command</div><div class="ttdef"><b>Definition:</b> CommandParameters.h:9</div></div>
+<div class="ttc" id="aclass_output_command_html"><div class="ttname"><a href="class_output_command.html">OutputCommand</a></div><div class="ttdoc">A Class responsible for indicating the output file. Command usage is &quot;o &lt;file-name&gt;&quot;</div><div class="ttdef"><b>Definition:</b> OutputCommand.h:12</div></div>
+<div class="ttc" id="aclass_output_command_html_a2d3add460c8db1dd3e3dd048bded0de0"><div class="ttname"><a href="class_output_command.html#a2d3add460c8db1dd3e3dd048bded0de0">OutputCommand::execute</a></div><div class="ttdeci">virtual void execute(Vector&lt; String * &gt; &amp;) const</div><div class="ttdoc">Decode a given BINARY string</div><div class="ttdef"><b>Definition:</b> OutputCommand.cpp:7</div></div>
+<div class="ttc" id="aclass_output_command_html_a85d42c483ab8a6f704650c1b7ae431d7"><div class="ttname"><a href="class_output_command.html#a85d42c483ab8a6f704650c1b7ae431d7">OutputCommand::getKeywordsCount</a></div><div class="ttdeci">virtual unsigned int getKeywordsCount() const</div><div class="ttdoc">Specifies the expected input parameters including the keyword, by default a single parameter is expec...</div><div class="ttdef"><b>Definition:</b> OutputCommand.cpp:3</div></div>
+<div class="ttc" id="aclass_output_command_html_a8802f0799e2f758dfebd0442211a72a2"><div class="ttname"><a href="class_output_command.html#a8802f0799e2f758dfebd0442211a72a2">OutputCommand::toString</a></div><div class="ttdeci">virtual String toString() const</div><div class="ttdoc">Gives the keyword of the command to be executed</div><div class="ttdef"><b>Definition:</b> OutputCommand.cpp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

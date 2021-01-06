@@ -1,26 +1,102 @@
 \hypertarget{class_command_parameters}{}\doxysection{Command\+Parameters Class Reference}
 \label{class_command_parameters}\index{CommandParameters@{CommandParameters}}
+
+
+Base Class, defining the main properties of a command  
+
+
+
+
+{\ttfamily \#include $<$Command\+Parameters.\+h$>$}
+
 Inheritance diagram for Command\+Parameters\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.931034cm]{class_command_parameters}
+\includegraphics[height=1.544828cm]{class_command_parameters}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_command_parameters_a12ce784459d1f639284b6333e474eed6}\label{class_command_parameters_a12ce784459d1f639284b6333e474eed6}} 
-virtual unsigned int {\bfseries get\+Keywords\+Count} () const
-\item 
+virtual unsigned int \mbox{\hyperlink{class_command_parameters_a12ce784459d1f639284b6333e474eed6}{get\+Keywords\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Specifies the expected input parameters including the keyword, by default a single parameter is expected -\/ the keyword \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_command_parameters_a38ad12982218f3920138bc3ca1645722}{execute}} (Vector$<$ String $\ast$ $>$ \&) const =0
+\begin{DoxyCompactList}\small\item\em Decode a given BINARY string \end{DoxyCompactList}\item 
+virtual String \mbox{\hyperlink{class_command_parameters_aa70f590b16b568519182f7b97bf1820a}{to\+String}} () const =0
+\begin{DoxyCompactList}\small\item\em Gives the keyword of the command to be executed \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_parameters_aa885d4b3cbce0513623b8f8d5d28f35c}{is\+Valid}} (const Vector$<$ String $>$ \&) const
+\begin{DoxyCompactList}\small\item\em Checks whether a command is valid and ready to be executed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base Class, defining the main properties of a command 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_command_parameters_a38ad12982218f3920138bc3ca1645722}\label{class_command_parameters_a38ad12982218f3920138bc3ca1645722}} 
-virtual void {\bfseries execute} (\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $\ast$ $>$ \&) const =0
-\item 
-\mbox{\Hypertarget{class_command_parameters_aa70f590b16b568519182f7b97bf1820a}\label{class_command_parameters_aa70f590b16b568519182f7b97bf1820a}} 
-virtual \mbox{\hyperlink{class_string}{String}} {\bfseries to\+String} () const =0
-\item 
+\index{CommandParameters@{CommandParameters}!execute@{execute}}
+\index{execute@{execute}!CommandParameters@{CommandParameters}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual void Command\+Parameters\+::execute (\begin{DoxyParamCaption}\item[{Vector$<$ String $\ast$ $>$ \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Decode a given BINARY string 
+
+Vector$<$\+String$\ast$$>$\& the expected parameters
+
+Implemented in \mbox{\hyperlink{class_output_command_a2d3add460c8db1dd3e3dd048bded0de0}{Output\+Command}}, \mbox{\hyperlink{class_input_command_ad4c7235cfea16ebbe6be1e8343ed6a9b}{Input\+Command}}, \mbox{\hyperlink{class_decompress_command_a0beb65fa90605b9e6098f23e2aed90ca}{Decompress\+Command}}, \mbox{\hyperlink{class_debug_command_a3e59de4392909149e52356a601d23b40}{Debug\+Command}}, and \mbox{\hyperlink{class_compress_command_a818ca5b689aded0a54a7ca2bc45a2f44}{Compress\+Command}}.
+
+\mbox{\Hypertarget{class_command_parameters_a12ce784459d1f639284b6333e474eed6}\label{class_command_parameters_a12ce784459d1f639284b6333e474eed6}} 
+\index{CommandParameters@{CommandParameters}!getKeywordsCount@{getKeywordsCount}}
+\index{getKeywordsCount@{getKeywordsCount}!CommandParameters@{CommandParameters}}
+\doxysubsubsection{\texorpdfstring{getKeywordsCount()}{getKeywordsCount()}}
+{\footnotesize\ttfamily unsigned int Command\+Parameters\+::get\+Keywords\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Specifies the expected input parameters including the keyword, by default a single parameter is expected -\/ the keyword 
+
+\begin{DoxyReturn}{Returns}
+unsigned int
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_output_command_a85d42c483ab8a6f704650c1b7ae431d7}{Output\+Command}}, and \mbox{\hyperlink{class_input_command_aa400520df349acd174757de4c1044349}{Input\+Command}}.
+
 \mbox{\Hypertarget{class_command_parameters_aa885d4b3cbce0513623b8f8d5d28f35c}\label{class_command_parameters_aa885d4b3cbce0513623b8f8d5d28f35c}} 
-bool {\bfseries is\+Valid} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $>$ \&) const
-\end{DoxyCompactItemize}
+\index{CommandParameters@{CommandParameters}!isValid@{isValid}}
+\index{isValid@{isValid}!CommandParameters@{CommandParameters}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Command\+Parameters\+::is\+Valid (\begin{DoxyParamCaption}\item[{const Vector$<$ String $>$ \&}]{keywords }\end{DoxyParamCaption}) const}
+
+
+
+Checks whether a command is valid and ready to be executed 
+
+const Vector$<$\+String$>$\& the needed parameters and keyword
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_command_parameters_aa70f590b16b568519182f7b97bf1820a}\label{class_command_parameters_aa70f590b16b568519182f7b97bf1820a}} 
+\index{CommandParameters@{CommandParameters}!toString@{toString}}
+\index{toString@{toString}!CommandParameters@{CommandParameters}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily virtual String Command\+Parameters\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gives the keyword of the command to be executed 
+
+\begin{DoxyReturn}{Returns}
+String
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_output_command_a8802f0799e2f758dfebd0442211a72a2}{Output\+Command}}, \mbox{\hyperlink{class_input_command_a03cfb0b8f39d574104f1362ffe99a72f}{Input\+Command}}, \mbox{\hyperlink{class_decompress_command_a3dd7503c635d433ba7ccbe24f9d8ef84}{Decompress\+Command}}, \mbox{\hyperlink{class_debug_command_a71a660d9f2bfe3f24efdc0a2804fc7c2}{Debug\+Command}}, and \mbox{\hyperlink{class_compress_command_a46bb48cb7dad5bd42c0187cc30050318}{Compress\+Command}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

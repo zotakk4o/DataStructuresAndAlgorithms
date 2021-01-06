@@ -49,3 +49,7 @@ String HuffmanDecoder::decode(const String& inputFileName) {
 	file >> tree;
 	return tree.decode(binaryCode);
 }
+
+String HuffmanDecoder::debug(const String& inputFileName) {
+
+}

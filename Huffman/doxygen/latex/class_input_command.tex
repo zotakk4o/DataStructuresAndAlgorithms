@@ -1,5 +1,14 @@
 \hypertarget{class_input_command}{}\doxysection{Input\+Command Class Reference}
 \label{class_input_command}\index{InputCommand@{InputCommand}}
+
+
+A Class responsible for indicating the input file. Command usage is \char`\"{}i $<$file-\/name$>$\char`\"{}  
+
+
+
+
+{\ttfamily \#include $<$Input\+Command.\+h$>$}
+
 Inheritance diagram for Input\+Command\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +18,68 @@ Inheritance diagram for Input\+Command\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_input_command_aa400520df349acd174757de4c1044349}\label{class_input_command_aa400520df349acd174757de4c1044349}} 
-virtual unsigned int {\bfseries get\+Keywords\+Count} () const
-\item 
+virtual unsigned int \mbox{\hyperlink{class_input_command_aa400520df349acd174757de4c1044349}{get\+Keywords\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Specifies the expected input parameters including the keyword, by default a single parameter is expected -\/ the keyword \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_input_command_ad4c7235cfea16ebbe6be1e8343ed6a9b}{execute}} (Vector$<$ String $\ast$ $>$ \&) const
+\begin{DoxyCompactList}\small\item\em Decode a given BINARY string \end{DoxyCompactList}\item 
+virtual String \mbox{\hyperlink{class_input_command_a03cfb0b8f39d574104f1362ffe99a72f}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Gives the keyword of the command to be executed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Class responsible for indicating the input file. Command usage is \char`\"{}i $<$file-\/name$>$\char`\"{} 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_input_command_ad4c7235cfea16ebbe6be1e8343ed6a9b}\label{class_input_command_ad4c7235cfea16ebbe6be1e8343ed6a9b}} 
-virtual void {\bfseries execute} (\mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_string}{String}} $\ast$ $>$ \&) const
-\item 
+\index{InputCommand@{InputCommand}!execute@{execute}}
+\index{execute@{execute}!InputCommand@{InputCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Input\+Command\+::execute (\begin{DoxyParamCaption}\item[{Vector$<$ String $\ast$ $>$ \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Decode a given BINARY string 
+
+Vector$<$\+String$\ast$$>$\& the expected parameters
+
+Implements \mbox{\hyperlink{class_command_parameters_a38ad12982218f3920138bc3ca1645722}{Command\+Parameters}}.
+
+\mbox{\Hypertarget{class_input_command_aa400520df349acd174757de4c1044349}\label{class_input_command_aa400520df349acd174757de4c1044349}} 
+\index{InputCommand@{InputCommand}!getKeywordsCount@{getKeywordsCount}}
+\index{getKeywordsCount@{getKeywordsCount}!InputCommand@{InputCommand}}
+\doxysubsubsection{\texorpdfstring{getKeywordsCount()}{getKeywordsCount()}}
+{\footnotesize\ttfamily unsigned int Input\+Command\+::get\+Keywords\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Specifies the expected input parameters including the keyword, by default a single parameter is expected -\/ the keyword 
+
+\begin{DoxyReturn}{Returns}
+unsigned int
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_command_parameters_a12ce784459d1f639284b6333e474eed6}{Command\+Parameters}}.
+
 \mbox{\Hypertarget{class_input_command_a03cfb0b8f39d574104f1362ffe99a72f}\label{class_input_command_a03cfb0b8f39d574104f1362ffe99a72f}} 
-virtual \mbox{\hyperlink{class_string}{String}} {\bfseries to\+String} () const
-\end{DoxyCompactItemize}
+\index{InputCommand@{InputCommand}!toString@{toString}}
+\index{toString@{toString}!InputCommand@{InputCommand}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String Input\+Command\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gives the keyword of the command to be executed 
+
+\begin{DoxyReturn}{Returns}
+String
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_command_parameters_aa70f590b16b568519182f7b97bf1820a}{Command\+Parameters}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

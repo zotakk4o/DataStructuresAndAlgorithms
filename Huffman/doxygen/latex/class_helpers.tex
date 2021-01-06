@@ -1,17 +1,74 @@
 \hypertarget{class_helpers}{}\doxysection{Helpers Class Reference}
 \label{class_helpers}\index{Helpers@{Helpers}}
+
+
+Class responsible for converting binary sequences to chars and vice-\/versa  
+
+
+
+
+{\ttfamily \#include $<$Helpers.\+h$>$}
+
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+static unsigned char \mbox{\hyperlink{class_helpers_af7fc806c1a86a8e40f8d708904ed0e69}{Binary\+String\+To\+Char}} (const String \&)
+\begin{DoxyCompactList}\small\item\em Coverts a 8-\/bit binary sequence to a character \end{DoxyCompactList}\item 
+static String \mbox{\hyperlink{class_helpers_aa4d16fee8ac77acbaa3a946928c3836c}{Char\+To\+Binary\+String}} (unsigned char)
+\begin{DoxyCompactList}\small\item\em Coverts a character to an 8-\/bit binary sequence \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_helpers_ad713e473980fbd73262490ef605cc4c8}\label{class_helpers_ad713e473980fbd73262490ef605cc4c8}} 
+static String {\bfseries convert\+Code\+For\+Debugging} (const String \&)
+\item 
+static void \mbox{\hyperlink{class_helpers_a590c4f074b86ab4247e3e81ede1e1d71}{exit\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Stops the currently running program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class responsible for converting binary sequences to chars and vice-\/versa 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_helpers_af7fc806c1a86a8e40f8d708904ed0e69}\label{class_helpers_af7fc806c1a86a8e40f8d708904ed0e69}} 
-static unsigned char {\bfseries Binary\+String\+To\+Char} (const \mbox{\hyperlink{class_string}{String}} \&)
-\item 
+\index{Helpers@{Helpers}!BinaryStringToChar@{BinaryStringToChar}}
+\index{BinaryStringToChar@{BinaryStringToChar}!Helpers@{Helpers}}
+\doxysubsubsection{\texorpdfstring{BinaryStringToChar()}{BinaryStringToChar()}}
+{\footnotesize\ttfamily unsigned char Helpers\+::\+Binary\+String\+To\+Char (\begin{DoxyParamCaption}\item[{const String \&}]{bin\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Coverts a 8-\/bit binary sequence to a character 
+
+const String\& the BINARY string to be converted
+
+\begin{DoxyReturn}{Returns}
+unsigned char
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_helpers_aa4d16fee8ac77acbaa3a946928c3836c}\label{class_helpers_aa4d16fee8ac77acbaa3a946928c3836c}} 
-static \mbox{\hyperlink{class_string}{String}} {\bfseries Char\+To\+Binary\+String} (unsigned char)
-\item 
+\index{Helpers@{Helpers}!CharToBinaryString@{CharToBinaryString}}
+\index{CharToBinaryString@{CharToBinaryString}!Helpers@{Helpers}}
+\doxysubsubsection{\texorpdfstring{CharToBinaryString()}{CharToBinaryString()}}
+{\footnotesize\ttfamily String Helpers\+::\+Char\+To\+Binary\+String (\begin{DoxyParamCaption}\item[{unsigned char}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Coverts a character to an 8-\/bit binary sequence 
+
+unsigned char the character to be converted
+
+\begin{DoxyReturn}{Returns}
+String
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_helpers_a590c4f074b86ab4247e3e81ede1e1d71}\label{class_helpers_a590c4f074b86ab4247e3e81ede1e1d71}} 
-static void {\bfseries exit\+Program} ()
-\end{DoxyCompactItemize}
+\index{Helpers@{Helpers}!exitProgram@{exitProgram}}
+\index{exitProgram@{exitProgram}!Helpers@{Helpers}}
+\doxysubsubsection{\texorpdfstring{exitProgram()}{exitProgram()}}
+{\footnotesize\ttfamily void Helpers\+::exit\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Stops the currently running program. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

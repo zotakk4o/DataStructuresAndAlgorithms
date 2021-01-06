@@ -1,5 +1,14 @@
 \hypertarget{class_config}{}\doxysection{Config Class Reference}
 \label{class_config}\index{Config@{Config}}
+
+
+Class responsible for storing project configuration  
+
+
+
+
+{\ttfamily \#include $<$Config.\+h$>$}
+
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -9,17 +18,22 @@ static const char {\bfseries command\+Delimiter} = \textquotesingle{} \textquote
 \mbox{\Hypertarget{class_config_aee9e8261298b90e827b78dc3057c2c57}\label{class_config_aee9e8261298b90e827b78dc3057c2c57}} 
 static std\+::istream \& {\bfseries input\+Stream} = std\+::cin
 \item 
-static const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_command_parameters}{Command\+Parameters}} $\ast$ $>$ {\bfseries commands\+Parameters}
+static const Vector$<$ \mbox{\hyperlink{class_command_parameters}{Command\+Parameters}} $\ast$ $>$ {\bfseries commands\+Parameters}
 \item 
 \mbox{\Hypertarget{class_config_ab3ff65fb5b796d6a04adf162f47541b6}\label{class_config_ab3ff65fb5b796d6a04adf162f47541b6}} 
-static const \mbox{\hyperlink{class_string}{String}} {\bfseries tree\+File\+Name\+Suffix} = \char`\"{}-\/tree.\+dat\char`\"{}
+static const String {\bfseries tree\+File\+Name\+Suffix} = \char`\"{}-\/tree.\+dat\char`\"{}
 \item 
 \mbox{\Hypertarget{class_config_a2577bf96c4cc944d795c7c0fccc40f81}\label{class_config_a2577bf96c4cc944d795c7c0fccc40f81}} 
-static const \mbox{\hyperlink{class_string}{String}} {\bfseries input\+File\+Command}
+static const String {\bfseries input\+File\+Command}
 \item 
 \mbox{\Hypertarget{class_config_a892168403cd9b421bc80f1f387f8b6fd}\label{class_config_a892168403cd9b421bc80f1f387f8b6fd}} 
-static const \mbox{\hyperlink{class_string}{String}} {\bfseries output\+File\+Command}
+static const String {\bfseries output\+File\+Command}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class responsible for storing project configuration 
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -27,7 +41,7 @@ static const \mbox{\hyperlink{class_string}{String}} {\bfseries output\+File\+Co
 \index{Config@{Config}!commandsParameters@{commandsParameters}}
 \index{commandsParameters@{commandsParameters}!Config@{Config}}
 \doxysubsubsection{\texorpdfstring{commandsParameters}{commandsParameters}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{class_vector}{Vector}}$<$ \mbox{\hyperlink{class_command_parameters}{Command\+Parameters}} $\ast$ $>$ Config\+::commands\+Parameters\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily const Vector$<$ \mbox{\hyperlink{class_command_parameters}{Command\+Parameters}} $\ast$ $>$ Config\+::commands\+Parameters\hspace{0.3cm}{\ttfamily [static]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}

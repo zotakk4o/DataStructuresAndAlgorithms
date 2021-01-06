@@ -3,6 +3,9 @@
 
 #include "include/String.h"
 
+/// <summary>
+/// Class responsible for storing error messages
+/// </summary>
 class Errors {
 	public:
 		static const String wrongCommandError;

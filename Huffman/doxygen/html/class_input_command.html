@@ -69,32 +69,131 @@ $(function() {
 <div class="title">InputCommand Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A Class responsible for indicating the input file. Command usage is "i &lt;file-name&gt;"  
+ <a href="class_input_command.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_input_command_8h_source.html">InputCommand.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for InputCommand:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_input_command.png" usemap="#InputCommand_map" alt=""/>
   <map id="InputCommand_map" name="InputCommand_map">
-<area href="class_command_parameters.html" alt="CommandParameters" shape="rect" coords="0,0,131,24"/>
+<area href="class_command_parameters.html" title="Base Class, defining the main properties of a command" alt="CommandParameters" shape="rect" coords="0,0,131,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa400520df349acd174757de4c1044349"><td class="memItemLeft" align="right" valign="top"><a id="aa400520df349acd174757de4c1044349"></a>
-virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getKeywordsCount</b> () const</td></tr>
+<tr class="memitem:aa400520df349acd174757de4c1044349"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_command.html#aa400520df349acd174757de4c1044349">getKeywordsCount</a> () const</td></tr>
+<tr class="memdesc:aa400520df349acd174757de4c1044349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the expected input parameters including the keyword, by default a single parameter is expected - the keyword  <a href="class_input_command.html#aa400520df349acd174757de4c1044349">More...</a><br /></td></tr>
 <tr class="separator:aa400520df349acd174757de4c1044349"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4c7235cfea16ebbe6be1e8343ed6a9b"><td class="memItemLeft" align="right" valign="top"><a id="ad4c7235cfea16ebbe6be1e8343ed6a9b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> (<a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_string.html">String</a> * &gt; &amp;) const</td></tr>
+<tr class="memitem:ad4c7235cfea16ebbe6be1e8343ed6a9b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_command.html#ad4c7235cfea16ebbe6be1e8343ed6a9b">execute</a> (Vector&lt; String * &gt; &amp;) const</td></tr>
+<tr class="memdesc:ad4c7235cfea16ebbe6be1e8343ed6a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a given BINARY string  <a href="class_input_command.html#ad4c7235cfea16ebbe6be1e8343ed6a9b">More...</a><br /></td></tr>
 <tr class="separator:ad4c7235cfea16ebbe6be1e8343ed6a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03cfb0b8f39d574104f1362ffe99a72f"><td class="memItemLeft" align="right" valign="top"><a id="a03cfb0b8f39d574104f1362ffe99a72f"></a>
-virtual <a class="el" href="class_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> () const</td></tr>
+<tr class="memitem:a03cfb0b8f39d574104f1362ffe99a72f"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_command.html#a03cfb0b8f39d574104f1362ffe99a72f">toString</a> () const</td></tr>
+<tr class="memdesc:a03cfb0b8f39d574104f1362ffe99a72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the keyword of the command to be executed  <a href="class_input_command.html#a03cfb0b8f39d574104f1362ffe99a72f">More...</a><br /></td></tr>
 <tr class="separator:a03cfb0b8f39d574104f1362ffe99a72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_command_parameters"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_command_parameters')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_command_parameters.html">CommandParameters</a></td></tr>
-<tr class="memitem:aa885d4b3cbce0513623b8f8d5d28f35c inherit pub_methods_class_command_parameters"><td class="memItemLeft" align="right" valign="top"><a id="aa885d4b3cbce0513623b8f8d5d28f35c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValid</b> (const <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_string.html">String</a> &gt; &amp;) const</td></tr>
+<tr class="memitem:aa885d4b3cbce0513623b8f8d5d28f35c inherit pub_methods_class_command_parameters"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_parameters.html#aa885d4b3cbce0513623b8f8d5d28f35c">isValid</a> (const Vector&lt; String &gt; &amp;) const</td></tr>
+<tr class="memdesc:aa885d4b3cbce0513623b8f8d5d28f35c inherit pub_methods_class_command_parameters"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a command is valid and ready to be executed  <a href="class_command_parameters.html#aa885d4b3cbce0513623b8f8d5d28f35c">More...</a><br /></td></tr>
 <tr class="separator:aa885d4b3cbce0513623b8f8d5d28f35c inherit pub_methods_class_command_parameters"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A Class responsible for indicating the input file. Command usage is "i &lt;file-name&gt;" </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad4c7235cfea16ebbe6be1e8343ed6a9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c7235cfea16ebbe6be1e8343ed6a9b">&#9670;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputCommand::execute </td>
+          <td>(</td>
+          <td class="paramtype">Vector&lt; String * &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decode a given BINARY string </p>
+<p>Vector&lt;String*&gt;&amp; the expected parameters</p>
+
+<p>Implements <a class="el" href="class_command_parameters.html#a38ad12982218f3920138bc3ca1645722">CommandParameters</a>.</p>
+
+</div>
+</div>
+<a id="aa400520df349acd174757de4c1044349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa400520df349acd174757de4c1044349">&#9670;&nbsp;</a></span>getKeywordsCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int InputCommand::getKeywordsCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specifies the expected input parameters including the keyword, by default a single parameter is expected - the keyword </p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned int</dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_command_parameters.html#a12ce784459d1f639284b6333e474eed6">CommandParameters</a>.</p>
+
+</div>
+</div>
+<a id="a03cfb0b8f39d574104f1362ffe99a72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03cfb0b8f39d574104f1362ffe99a72f">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String InputCommand::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gives the keyword of the command to be executed </p>
+<dl class="section return"><dt>Returns</dt><dd>String</dd></dl>
+
+<p>Implements <a class="el" href="class_command_parameters.html#aa70f590b16b568519182f7b97bf1820a">CommandParameters</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/zotak/Desktop/DataStructuresAndAlgorithms/Huffman/src/commands/<a class="el" href="_input_command_8h_source.html">InputCommand.h</a></li>
 <li>C:/Users/zotak/Desktop/DataStructuresAndAlgorithms/Huffman/src/commands/InputCommand.cpp</li>

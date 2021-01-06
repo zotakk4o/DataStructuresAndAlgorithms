@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['string_18',['String',['../class_string.html',1,'']]]
+  ['printcodes_21',['printCodes',['../class_huffman_tree.html#ae574ec747b9c5f839659fff54e872678',1,'HuffmanTree']]]
 ];

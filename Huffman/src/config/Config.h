@@ -6,6 +6,9 @@
 #include "../commands/BaseClasses/CommandParameters.h"
 #include <iostream>
 
+/// <summary>
+/// Class responsible for storing project configuration
+/// </summary>
 class Config {
 	public:
 		static const char commandDelimiter;

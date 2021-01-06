@@ -4,6 +4,9 @@
 #include "BaseClasses/CommandParameters.h"
 #include "include/String.h"
 
+/// <summary>
+/// A Class responsible for indicating the output file. Command usage is "o <file-name>"
+/// </summary>
 class OutputCommand :
 	public CommandParameters
 {

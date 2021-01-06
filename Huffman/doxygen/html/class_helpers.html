@@ -69,19 +69,117 @@ $(function() {
 <div class="title">Helpers Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class responsible for converting binary sequences to chars and vice-versa  
+ <a href="class_helpers.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_helpers_8h_source.html">Helpers.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af7fc806c1a86a8e40f8d708904ed0e69"><td class="memItemLeft" align="right" valign="top"><a id="af7fc806c1a86a8e40f8d708904ed0e69"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>BinaryStringToChar</b> (const <a class="el" href="class_string.html">String</a> &amp;)</td></tr>
+<tr class="memitem:af7fc806c1a86a8e40f8d708904ed0e69"><td class="memItemLeft" align="right" valign="top">static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_helpers.html#af7fc806c1a86a8e40f8d708904ed0e69">BinaryStringToChar</a> (const String &amp;)</td></tr>
+<tr class="memdesc:af7fc806c1a86a8e40f8d708904ed0e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coverts a 8-bit binary sequence to a character  <a href="class_helpers.html#af7fc806c1a86a8e40f8d708904ed0e69">More...</a><br /></td></tr>
 <tr class="separator:af7fc806c1a86a8e40f8d708904ed0e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4d16fee8ac77acbaa3a946928c3836c"><td class="memItemLeft" align="right" valign="top"><a id="aa4d16fee8ac77acbaa3a946928c3836c"></a>
-static <a class="el" href="class_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CharToBinaryString</b> (unsigned char)</td></tr>
+<tr class="memitem:aa4d16fee8ac77acbaa3a946928c3836c"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_helpers.html#aa4d16fee8ac77acbaa3a946928c3836c">CharToBinaryString</a> (unsigned char)</td></tr>
+<tr class="memdesc:aa4d16fee8ac77acbaa3a946928c3836c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coverts a character to an 8-bit binary sequence  <a href="class_helpers.html#aa4d16fee8ac77acbaa3a946928c3836c">More...</a><br /></td></tr>
 <tr class="separator:aa4d16fee8ac77acbaa3a946928c3836c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a590c4f074b86ab4247e3e81ede1e1d71"><td class="memItemLeft" align="right" valign="top"><a id="a590c4f074b86ab4247e3e81ede1e1d71"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>exitProgram</b> ()</td></tr>
+<tr class="memitem:ad713e473980fbd73262490ef605cc4c8"><td class="memItemLeft" align="right" valign="top"><a id="ad713e473980fbd73262490ef605cc4c8"></a>
+static String&#160;</td><td class="memItemRight" valign="bottom"><b>convertCodeForDebugging</b> (const String &amp;)</td></tr>
+<tr class="separator:ad713e473980fbd73262490ef605cc4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590c4f074b86ab4247e3e81ede1e1d71"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_helpers.html#a590c4f074b86ab4247e3e81ede1e1d71">exitProgram</a> ()</td></tr>
+<tr class="memdesc:a590c4f074b86ab4247e3e81ede1e1d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the currently running program.  <a href="class_helpers.html#a590c4f074b86ab4247e3e81ede1e1d71">More...</a><br /></td></tr>
 <tr class="separator:a590c4f074b86ab4247e3e81ede1e1d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class responsible for converting binary sequences to chars and vice-versa </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af7fc806c1a86a8e40f8d708904ed0e69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7fc806c1a86a8e40f8d708904ed0e69">&#9670;&nbsp;</a></span>BinaryStringToChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Helpers::BinaryStringToChar </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;&#160;</td>
+          <td class="paramname"><em>binStr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Coverts a 8-bit binary sequence to a character </p>
+<p>const String&amp; the BINARY string to be converted</p>
+<dl class="section return"><dt>Returns</dt><dd>unsigned char</dd></dl>
+
+</div>
+</div>
+<a id="aa4d16fee8ac77acbaa3a946928c3836c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4d16fee8ac77acbaa3a946928c3836c">&#9670;&nbsp;</a></span>CharToBinaryString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String Helpers::CharToBinaryString </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>symbol</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Coverts a character to an 8-bit binary sequence </p>
+<p>unsigned char the character to be converted</p>
+<dl class="section return"><dt>Returns</dt><dd>String</dd></dl>
+
+</div>
+</div>
+<a id="a590c4f074b86ab4247e3e81ede1e1d71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590c4f074b86ab4247e3e81ede1e1d71">&#9670;&nbsp;</a></span>exitProgram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Helpers::exitProgram </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stops the currently running program. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/zotak/Desktop/DataStructuresAndAlgorithms/Huffman/src/helpers/<a class="el" href="_helpers_8h_source.html">Helpers.h</a></li>
 <li>C:/Users/zotak/Desktop/DataStructuresAndAlgorithms/Huffman/src/helpers/Helpers.cpp</li>
