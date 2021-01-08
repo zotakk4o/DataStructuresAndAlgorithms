@@ -7,7 +7,7 @@ class GraphAPI
 {
 	public:
 		GraphAPI() = delete;
-		static int degree(const UGraph&, int);
+		static int degree(const UGraph&, const int&);
 		static int maxDegree(const UGraph&);
 		static double avgDegree(const UGraph&);
 		static int numberOfSelfLoops(const UGraph&);

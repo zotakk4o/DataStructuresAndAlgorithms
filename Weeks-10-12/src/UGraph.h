@@ -15,9 +15,9 @@ class UGraph
 		UGraph(const UGraph&);
 		UGraph& operator=(const UGraph&);
 
-		void addEdge(int, int);
-		void removeEdge(int, int);
-		std::list<int> adjacent(int) const;
+		void addEdge(const int&, const int&);
+		void removeEdge(const int&, const int&);
+		std::list<int> adjacent(const int&) const;
 
 		int V() const;
 		int E() const;

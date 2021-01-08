@@ -12,14 +12,15 @@ class BFSPaths
 		int* edgeTo;
 		int start;
 	
-		void bfs(const UGraph&, int);
-	
+		void bfs(const UGraph&, const int&);
 	public:
-		BFSPaths(const UGraph&, int);
+		BFSPaths(const UGraph&, const int&);
+		BFSPaths(const BFSPaths&) = delete;
+		BFSPaths& operator=(const BFSPaths&) = delete;
 		~BFSPaths();
 	
-		bool hasPathTo(int);
-		std::stack<int> pathTo(int);
+		bool hasPathTo(const int&);
+		std::stack<int> pathTo(const int&);
 };
 
 #endif

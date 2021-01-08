@@ -11,15 +11,17 @@ class DFSPaths
 		int* edgeTo;
 		int start;
 	
-		void dfs(const UGraph&, int); // recurvise
-		void iterativeDFS(const UGraph&, int); // iterative
+		void dfs(const UGraph&, const int&); // recurvise
+		void iterativeDFS(const UGraph&, const int&); // iterative
 	
 	public:
-		DFSPaths(const UGraph&, int);
+		DFSPaths(const UGraph&, const int&, const bool& = false);
+		DFSPaths(const DFSPaths&) = delete;
+		DFSPaths& operator=(const DFSPaths&) = delete;
 		~DFSPaths();
 	
-		bool hasPathTo(int);
-		std::stack<int> pathTo(int);
+		bool hasPathTo(const int&);
+		std::stack<int> pathTo(const int&);
 };
 
 #endif
