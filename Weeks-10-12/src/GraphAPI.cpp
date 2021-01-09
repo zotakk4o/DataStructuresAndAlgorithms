@@ -40,3 +40,16 @@ int GraphAPI::numberOfSelfLoops(const UGraph& g) {
 
 	return selfLoops / 2; // Because of the addEdge implementation in UGraph
 }
+
+int GraphAPI::nonIsolatedVertex(const UGraph& g) {
+	int vertices = g.V();
+
+	for (int v = 0; v < vertices; v++)
+	{
+		if (g.adjacent(v).size()) {
+			return v;
+		}
+	}
+
+	return -1;
+}

@@ -12,8 +12,11 @@ class Cycle
 	
 	public:
 		Cycle(const UGraph&);
-		bool hasCycle();
+		Cycle(const Cycle&) = delete;
+		Cycle& operator=(const Cycle&) = delete;
 		~Cycle();
+
+		bool hasCycle();
 };
 
 #endif

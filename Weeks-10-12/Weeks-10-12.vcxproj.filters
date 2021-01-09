@@ -18,6 +18,15 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\BFSPaths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Bipartite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cycle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\DFSPaths.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -27,11 +36,23 @@
     <ClCompile Include="src\UGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\BFSPaths.cpp">
+    <ClCompile Include="src\EulerianCycle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EulerianPath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BFSPaths.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Bipartite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cycle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="src\DFSPaths.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -41,7 +62,10 @@
     <ClInclude Include="src\UGraph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\BFSPaths.h">
+    <ClInclude Include="src\EulerianCycle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EulerianPath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

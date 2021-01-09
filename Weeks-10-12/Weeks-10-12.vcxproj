@@ -129,13 +129,21 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\BFSPaths.cpp" />
+    <ClCompile Include="src\Bipartite.cpp" />
+    <ClCompile Include="src\Cycle.cpp" />
     <ClCompile Include="src\DFSPaths.cpp" />
+    <ClCompile Include="src\EulerianCycle.cpp" />
+    <ClCompile Include="src\EulerianPath.cpp" />
     <ClCompile Include="src\GraphAPI.cpp" />
     <ClCompile Include="src\UGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BFSPaths.h" />
+    <ClInclude Include="src\Bipartite.h" />
+    <ClInclude Include="src\Cycle.h" />
     <ClInclude Include="src\DFSPaths.h" />
+    <ClInclude Include="src\EulerianCycle.h" />
+    <ClInclude Include="src\EulerianPath.h" />
     <ClInclude Include="src\GraphAPI.h" />
     <ClInclude Include="src\UGraph.h" />
   </ItemGroup>

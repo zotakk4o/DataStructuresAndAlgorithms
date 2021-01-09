@@ -13,6 +13,8 @@ class Bipartite
 		void dfs(const UGraph&, const int&);
 	public:
 		Bipartite(const UGraph&);
+		Bipartite(const Bipartite&) = delete;
+		Bipartite& operator=(const Bipartite&) = delete;
 		~Bipartite();
 
 		bool isBipartite();

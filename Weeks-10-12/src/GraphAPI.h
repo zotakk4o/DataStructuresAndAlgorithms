@@ -11,6 +11,7 @@ class GraphAPI
 		static int maxDegree(const UGraph&);
 		static double avgDegree(const UGraph&);
 		static int numberOfSelfLoops(const UGraph&);
+		static int nonIsolatedVertex(const UGraph&);
 };
 
 #endif
