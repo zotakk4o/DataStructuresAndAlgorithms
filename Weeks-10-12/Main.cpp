@@ -1,7 +1,9 @@
 #include "src/UGraph.h"
+#include "src/DGraph.h"
 #include "src/DFSPaths.h"
 #include "src/EulerianCycle.h"
 #include "src/EulerianPath.h"
+#include "src/TopologicalSort.h"
 #include<iostream>
 #include<stack>
 
@@ -79,5 +81,36 @@ int main() {
 	EulerianCycle cycleFail{ fail };
 	std::cout << "Has cycle? " << cycleFail.hasEulerianCycle() << std::endl;
 	std::cout << "Has path? " << pathFail.hasEulerianPath() << std::endl;
+
+	DGraph top{ 6 };
+	top.addEdge(5, 2);
+	top.addEdge(5, 0);
+	top.addEdge(4, 0);
+	top.addEdge(4, 1);
+	top.addEdge(2, 3);
+	top.addEdge(3, 1);
+
+	TopologicalSort sort{ top };
+
+	std::cout << "Reversed top sort: ";
+	printStack<int>(sort.reversePost());
+
+	DGraph notDAG{ 6 };
+	notDAG.addEdge(5, 2);
+	notDAG.addEdge(5, 0);
+	notDAG.addEdge(0, 5);
+	notDAG.addEdge(4, 0);
+	notDAG.addEdge(4, 1);
+	notDAG.addEdge(2, 3);
+	notDAG.addEdge(3, 1);
+
+	try {
+		TopologicalSort srtNotDag{ notDAG };
+	}
+	catch (const std::invalid_argument& err) {
+		std::cerr << err.what() << std::endl;
+	}
+	
+	
 	return 0;
 }
