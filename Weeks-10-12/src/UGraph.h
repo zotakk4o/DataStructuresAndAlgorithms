@@ -12,8 +12,6 @@ class UGraph
 		int edges;
 	public:
 		UGraph(const int&);
-		UGraph(const UGraph&);
-		UGraph& operator=(const UGraph&);
 
 		void addEdge(const int&, const int&);
 		void removeEdge(const int&, const int&);

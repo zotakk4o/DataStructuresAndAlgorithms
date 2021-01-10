@@ -42,6 +42,12 @@ int main() {
 	euPath.addEdge(0, 3);
 	euPath.addEdge(3, 4);
 
+	UGraph euPath2{ 4 };
+	euPath2.addEdge(0, 1);
+	euPath2.addEdge(0, 3);
+	euPath2.addEdge(1, 3);
+	euPath2.addEdge(2, 3);
+
 	UGraph euCycle{ 5 };
 	euCycle.addEdge(0, 1);
 	euCycle.addEdge(0, 2);
@@ -60,11 +66,14 @@ int main() {
 
 	EulerianCycle cycle{ euCycle };
 	EulerianPath path{ euPath };
+	EulerianPath path2{ euPath2 };
 
 	std::cout << "Cycle: ";
 	printStack<int>(cycle.eulerianCycle());
 	std::cout << "Path: ";
 	printStack<int>(path.eulerianPath());
+	std::cout << "Path2: ";
+	printStack<int>(path2.eulerianPath());
 
 	EulerianPath pathFail{ fail };
 	EulerianCycle cycleFail{ fail };
